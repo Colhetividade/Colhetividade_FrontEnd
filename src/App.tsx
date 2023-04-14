@@ -17,7 +17,7 @@ function App() {
        <div style={{ minHeight: '100vh'}}>
      <Routes> 
      <Route  path="/login" element={<Login />} />
-     <Route  path="/login" element={<Cadastro />} />
+     <Route  path="/cadastro" element={<Cadastro />} />
     </Routes> 
     </div>
      <Footer/>
