@@ -3,17 +3,17 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import Navbar from './components/statics/navbar/Navbar'
 import Footer from './components/statics/footer/Footer'
+import CadastroProdutos from './pages/cadastroProdutos/CadastroProdutos'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <BrowserRouter>
       <Navbar />
        <div style={{ minHeight: '100vh'}}>
-     <Routes> 
-
+     <Routes>
+     <Route  path="/CadastroProdutos" element={<CadastroProdutos/>} /> 
     </Routes> 
     </div>
      <Footer/>
