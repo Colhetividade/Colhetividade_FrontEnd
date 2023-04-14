@@ -3,6 +3,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import Navbar from './components/statics/navbar/Navbar'
 import Footer from './components/statics/footer/Footer'
+import Login from './pages/login/Login'
 import './App.css'
 
 function App() {
@@ -11,13 +12,14 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-       <div style={{ minHeight: '100vh'}}>
+       
      <Routes> 
-
+        <Route path="/" element={<Login />} />
     </Routes> 
-    </div>
+    
      <Footer/>
     </BrowserRouter>
+
   )
 }
 
