@@ -14,7 +14,7 @@ export default function Cadastro() {
             <Typography variant='h3' gutterBottom color="textPrimary" component='h3' align='center' style={{fontWeight: 'bold'}}>Login</Typography>
             <TextField id='Nome' label='Nome' variant='outlined' name='Nome' margin='normal' fullWidth></TextField>
             <TextField id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal' fullWidth></TextField>
-            <TextField id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth></TextField>
+            <TextField id='senha' label='senha' variant='outlined' name='senha' margin='normal' fullWidth></TextField>
             <TextField id='TipoUsuario' label='TipoUsuario' variant='outlined' name='TipoUsuario' margin='normal' fullWidth></TextField>
             <TextField id='Foto' label='foto' variant='outlined' name='Foto' margin='normal' fullWidth></TextField>
             <Button variant="contained" >Cadastar</Button>
