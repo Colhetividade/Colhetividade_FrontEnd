@@ -9,7 +9,7 @@ export default function Login() {
     return (
         <Grid className="boxForm" container >
             <Grid >
-        <Box paddingX={20}>
+        <Box>
         <form action="">
             <Typography variant='h3' gutterBottom color="textPrimary" component='h3' align='center' style={{fontWeight: 'bold'}}>Login</Typography>
             <TextField id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal' fullWidth></TextField>

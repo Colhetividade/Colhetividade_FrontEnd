@@ -5,7 +5,7 @@ import {Grid, Typography, Button } from '@material-ui/core';
 import TextField from '@mui/material/TextField';
 import './Cadastro.css'
 
-export default function Login() {
+export default function Cadastro() {
     return (
         <Grid className="boxForm" container >
             <Grid >
