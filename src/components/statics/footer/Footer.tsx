@@ -13,7 +13,7 @@ function Footer() {
             <Grid container direction="row" justifyContent="center" alignItems="center" >
                 <Grid alignItems="center" item xs={12} style={{ backgroundColor: "#6D4F35", height: "120px", display: 'flex', justifyContent: 'center' }}>
 
-                    <Box style={{ width: '65%', height: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <Box style={{ width: '75vw', height: '10vh', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
 
 
                         <Box>
