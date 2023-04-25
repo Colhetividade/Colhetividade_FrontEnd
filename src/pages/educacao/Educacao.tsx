@@ -113,6 +113,11 @@ function Educacao() {
 
             </Grid>
 
+
+function Educacao() {
+    return(
+        <>
+educacao
         </>
     )
 }
