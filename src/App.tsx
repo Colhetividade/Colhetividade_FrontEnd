@@ -25,13 +25,6 @@ function App() {
       </div>
       <Footer />
 
-       <div style={{ minHeight: '100vh'}}>
-     <Routes> 
-     
-    </Routes> 
-    </div>
-     <Footer/>
-
     </BrowserRouter>
   )
 }
