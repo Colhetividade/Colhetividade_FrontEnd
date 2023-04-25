@@ -1,0 +1,10 @@
+
+
+
+const modalProps = [
+    {
+        videoModal: <iframe width="560" height="315" src="https://www.youtube.com/embed/9w8WW5T9dP0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>,
+            txtModal: "Mussum Ipsum, cacilds vidis litro abertis. Copo furadis é disculpa de bebadis, arcu quam euismod magna.Admodum accumsan disputationi eu sit. Vide electram sadipscing et per.In elementis mé pra quem é amistosis quis leo.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose."
+    }
+    
+]
