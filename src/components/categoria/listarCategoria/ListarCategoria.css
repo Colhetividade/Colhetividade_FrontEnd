@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 /* 1º Bloco */
 
 .card1{
@@ -81,15 +83,32 @@
   }
   
   /* 3º Bloco */
+
+.content_card{
+  background-color: #37784F;
+  width: 500px;
+  height: 350px;
+}
   .categoria{
-    margin-left: 8%;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
   }
+
   .card {
-    width: 490px;
-    height: 264px;
-    background: #37784f;
+    width: 500px;
+    height: 220px;
     border-radius: 11px;
-    margin: 30px;
+    background-color: #37784F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container_yuri{
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   .titulo-card {
@@ -97,6 +116,14 @@
     font-size: 26px;
     text-align: center;
     color: white;
+    background-color: pink;
+    max-width: 500px;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .buttons_style{
+    display: flex;
+    margin-top: 20px;
   }
   
   .valor {
@@ -104,6 +131,8 @@
     font-size: 18px;
   margin-top: 15px;
      text-align: center; 
+     background-color: crimson;
+     font-family: 'Roboto', sans-serif;
   }
   
   .button-card {
@@ -116,9 +145,12 @@
     text-align: center;
     width: 217px;
     height: 60px;
+    background-color: blue;
   }
   
   .img-card {
     margin-top: 50px;
    margin-left: 0px;
+   width: 200px;
+   position:absolute;
   }
