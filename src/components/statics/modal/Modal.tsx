@@ -18,8 +18,8 @@ const style = {
     p: 4,
 };
 
-interface ModalProps {
-    videoModal: HTMLElement;
+export interface ModalProps {
+    videoModal: any;
     txtModal: string;
 }
 
