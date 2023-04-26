@@ -108,4 +108,5 @@ function Educacao() {
     )
 }
 
+
 export default Educacao;
