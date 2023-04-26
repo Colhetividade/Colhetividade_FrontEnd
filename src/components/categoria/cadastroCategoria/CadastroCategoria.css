@@ -1,0 +1,21 @@
+.typo_size{
+    font-size: 28px!important;
+    font-weight: bold!important;
+    color: #37784F!important;
+}
+
+.btn_send{
+    margin-top: 20px!important;
+    background-color: #37784F!important;
+}
+
+.btn_send:hover{
+    background-color: #20452e!important;
+}
+
+.formAll{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

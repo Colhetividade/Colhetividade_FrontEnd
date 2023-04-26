@@ -4,6 +4,7 @@ import { Container, Typography, TextField, Button } from "@material-ui/core"
 import useLocalStorage from 'react-use-localstorage';
 import Categoria from '../../../models/Categoria';
 import { buscaId, post, put } from '../../../services/Service';
+import './CadastroCategoria.css';
 
 function CadastroCategoria(){
     let history = useNavigate();
@@ -82,11 +83,11 @@ function CadastroCategoria(){
     return (
        <>
         <Container maxWidth="sm" className="topo">
-            <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de Cadastro de Categoria</Typography>
+            <form className='formAll' onSubmit={onSubmit}>
+                <Typography className="typo_size" variant="h3" color="textSecondary" component="h1" align="center" >Cadastrar Categoria</Typography>
                 <TextField value={categoria.tipo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedCategoria(e)} id="tipo" label="Nome da Categoria" variant="outlined" name="tipo" margin="normal" fullWidth />
                 <TextField value={categoria.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedCategoria(e)} id="descricao" label="Descrição da Categoria" variant="outlined" name="descricao" margin="normal" fullWidth />
-                <Button type="submit" variant="contained" color="primary">
+                <Button className="btn_send" type="submit" variant="contained" color="primary">
                     Enviar Formulário
                 </Button>
             </form>

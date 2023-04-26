@@ -23,7 +23,8 @@ const useStyles = makeStyles((theme: Theme) =>
       position: 'absolute',
       width: 400,
       backgroundColor: theme.palette.background.paper,
-      border: '2px solid #000',
+      border: '1px solid #000',
+      borderRadius: 15,
       boxShadow: theme.shadows[5],
       padding: theme.spacing(2, 4, 3),
     },
@@ -57,7 +58,7 @@ function ModalCategoria () {
       <Button
         variant="outlined"
         className="btnModal"
-        onClick={handleOpen}>Nova Categoria</Button>
+        onClick={handleOpen}>Criar Categoria</Button>
       <Modal
         open={open}
         onClose={handleClose}

@@ -64,14 +64,12 @@ function ListarCategoria() {
           <Box>
             <img className="img" src={foto1} alt="imagem de homem negro segurando um punhado de flores." />
           </Box>
-          <Box>
+          <Box className="box_description">
             <h1 className='titulo'> Categoria dos produtos</h1>
             <p className='descricao'>Veja aqui a categoria de produtos disponibilizada pela agricultura local</p>
-          </Box>
-        </Box>
-        <Box className='IconFlex'>
-          <Box marginRight={1}>
-            <ModalCategoria />
+            <Box className='modalBox' marginRight={1}>
+              <ModalCategoria />
+            </Box>
           </Box>
         </Box>
         {/* CARROSEL */}
@@ -91,9 +89,9 @@ function ListarCategoria() {
             onAutoplayTimeLeft={onAutoplayTimeLeft}
 
           >
-            <SwiperSlide  >
+            <SwiperSlide className='mySwiper'>
               <Box display="flex" className="swiper1">
-                <Box>
+                <Box className="swiperItems">
                   <p className="promocao">Promoções do momento</p>
                   <p className="tipo">Milho orgânico <p>por R$17,99</p></p>
                   <button className="button-swiper">Comprar</button>
@@ -103,82 +101,76 @@ function ListarCategoria() {
                 </Box>
               </Box>
             </SwiperSlide>
-            <SwiperSlide> <Box display="flex" className="swiper1">
-              <Box>
-                <p className="promocao">Promoções do momento</p>
-                <p className="tipo">Arroz Integral <p>por R$10,99</p></p>
-                <button className="button-swiper">Comprar</button>
+            <SwiperSlide className='mySwiper' >
+              <Box display="flex" className="swiper1">
+                <Box className="swiperItems">
+                  <p className="promocao">Promoções do momento</p>
+                  <p className="tipo">Arroz Integral <p>por R$10,99</p></p>
+                  <button className="button-swiper">Comprar</button>
+                </Box>
+                <Box className="swiper2">
+                  <img className="img-swiper" src={foto2} alt="foto de um saco de feijão" />
+                </Box>
+              </Box></SwiperSlide>
+            <SwiperSlide className='mySwiper' >
+              <Box display="flex" className="swiper1">
+                <Box className="swiperItems">
+                  <p className="promocao">Promoções do momento</p>
+                  <p className="tipo">Arroz Integral <p>por R$10,99</p></p>
+                  <button className="button-swiper">Comprar</button>
+                </Box>
+                <Box className="swiper2">
+                  <img className="img-swiper" src={foto2} alt="foto de um saco de feijão" />
+                </Box>
               </Box>
-              <Box className="swiper2">
-                <img className="img-swiper" src={foto2} alt="foto de um saco de feijão" />
+            </SwiperSlide>
+            <SwiperSlide className='mySwiper'>
+              <Box display="flex" className="swiper1">
+                <Box className="swiperItems">
+                  <p className="promocao">Promoções do momento</p>
+                  <p className="tipo">Arroz Integral <p>por R$10,99</p></p>
+                  <button className="button-swiper">Comprar</button>
+                </Box>
+                <Box className="swiper2">
+                  <img className="img-swiper" src={foto2} alt="foto de um saco de feijão" />
+                </Box>
               </Box>
-            </Box></SwiperSlide>
-            <SwiperSlide> <Box display="flex" className="swiper1">
-              <Box>
-                <p className="promocao">Promoções do momento</p>
-                <p className="tipo">Arroz Integral <p>por R$10,99</p></p>
-                <button className="button-swiper">Comprar</button>
-              </Box>
-              <Box className="swiper2">
-                <img className="img-swiper" src={foto2} alt="foto de um saco de feijão" />
-              </Box>
-            </Box></SwiperSlide>
-            <SwiperSlide> <Box display="flex" className="swiper1">
-              <Box>
-                <p className="promocao">Promoções do momento</p>
-                <p className="tipo">Arroz Integral <p>por R$10,99</p></p>
-                <button className="button-swiper">Comprar</button>
-              </Box>
-              <Box className="swiper2">
-                <img className="img-swiper" src={foto2} alt="foto de um saco de feijão" />
-              </Box>
-            </Box></SwiperSlide>
+            </SwiperSlide>
 
           </Swiper>
         </Box>
       </Container >
 
-      <Grid container className="container_cards" spacing={2} direction='row'>
+      <Grid container className="container_cards" spacing={2}>
         {
           categorias.map(categorias => (
             <Grid item xs={4} key={categorias.id}>
-              <Box m={2} >
-                {/*  <Card>
-                  <CardContent className="content_card"> */}
-                {/* <Box className="categoria"> */}
-                <Box display="flex" flexDirection="row">
-                  <div className="card">
-                    <Box display="flex" flexDirection="row" className='container_yuri'>
-                      <Box className='container_yuri'>
-                        <h3 className="titulo-card"> {categorias.tipo}</h3>
-                        <h4 className="valor">  {categorias.descricao}</h4>
 
-                        <Box className="buttons_style">
-                          <Link to={`/formularioCategoria/${categorias.id}`} className="text-decorator-none">
-                            <Box mx={1}>
-                              <Button variant="contained" className="marginLeft" size='small' color="primary" >
-                                Atualizar
-                              </Button>
-                            </Box>
-                          </Link>
-                          <Link to={`/deletarCategoria/${categorias.id}`} className="text-decorator-none">
-                            <Box mx={1}>
-                              <Button variant="contained" size='small' color="secondary">
-                                deletar
-                              </Button>
-                            </Box>
-                          </Link>
+              <Box display="flex" flexDirection="row" m={2}>
+
+                <div className="card">
+                  <Box display="flex" flexDirection="column" className="container_yuri">
+                    <Typography className="titulo-card" noWrap variant="h3">{categorias.tipo}</Typography>
+                    <Typography className="valor" noWrap variant="h4">{categorias.descricao}</Typography>
+
+                    <Box className="buttons_style">
+                      <Link to={`/formularioCategoria/${categorias.id}`} className="text-decorator-none">
+                        <Box mx={1}>
+                          <Button variant="contained" className="marginLeft button_atualizar" size='small' color="primary" >
+                            Atualizar
+                          </Button>
                         </Box>
-                      </Box>
-                      {/*  <Box>
-                              <img className="img-card" src={foto4} alt="foto de horta" />
-                            </Box> */}
+                      </Link>
+                      <Link to={`/deletarCategoria/${categorias.id}`} className="text-decorator-none">
+                        <Box mx={1}>
+                          <Button className="button_delete" variant="contained" size='small' color="secondary">
+                            Excluir
+                          </Button>
+                        </Box>
+                      </Link>
                     </Box>
-                  </div>
-                </Box>
-                {/*    </Box> */}
-                {/*   </CardContent>
-                </Card> */}
+                  </Box>
+                </div>
               </Box>
             </Grid>
           ))
@@ -187,7 +179,5 @@ function ListarCategoria() {
     </>
   );
 }
-
-
 
 export default ListarCategoria;
