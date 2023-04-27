@@ -1,12 +1,23 @@
 import { Grid, Typography, Button } from '@material-ui/core';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box } from '@mui/material';
 import banner from '../../assets/img/banner_home.png'
 import './Home.css'
 import description from '../../assets/img/description_home.png'
 import education from '../../assets/img/Education_home.png'
+import { useNavigate } from 'react-router-dom';
+import useLocalStorage from 'react-use-localstorage';
 
 function Home() {
+    let navigate = useNavigate();
+    const [token, setToken] = useLocalStorage('token');
+
+    useEffect(() => {
+        if (token == '') {
+            alert("Você precisa estar logado")
+            navigate("/login")
+        }
+    }, [token])
 
     return (
         <>
@@ -19,22 +30,22 @@ function Home() {
                     </Box>
                 </Grid>
 
-                <Grid container md={12} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                <Grid container md={12} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
 
 
-                <Grid item xs={12} md={6} className='imgDescriptionGrid'>
-                    <img src={description} alt="" />
+                    <Grid item xs={12} md={6} className='imgDescriptionGrid'>
+                        <img src={description} alt="" />
+                    </Grid>
+
+                    <Grid className='description_text' item xs={12} md={6} style={{ width: '80%' }} >
+                        <Box className='boxTextDescription'>
+                            <Typography id="typodesc">A Colhetividade é um e-commerce que visa fomentar a agricultura local com a venda de produtos originados diretamente das colheitas das terras brasileiras, dando valor e oportunidades para agricultores locais de participarem ativamente da economia local de suas vizinhanças</Typography>
+                        </Box>
+                    </Grid>
+
                 </Grid>
 
-                <Grid className='description_text' item xs={12} md={6} style={{ width: '80%' }} >
-                   <Box className='boxTextDescription'>
-                   <Typography id="typodesc">A Colhetividade é um e-commerce que visa fomentar a agricultura local com a venda de produtos originados diretamente das colheitas das terras brasileiras, dando valor e oportunidades para agricultores locais de participarem ativamente da economia local de suas vizinhanças</Typography>
-                   </Box>
-                </Grid>
-
-                </Grid>
-
-                <Grid  alignItems="center" className='acess_section'>
+                <Grid alignItems="center" className='acess_section'>
                     <Typography className="text_acess">Descubra uma vasta diversidade de produtos!</Typography>
                     <Button className='btn-acess'>Acessar</Button>
                 </Grid>
@@ -45,14 +56,14 @@ function Home() {
                 </Grid>
 
                 <Grid item xs={6} className='more_section'>
-                    <span>Gostou? Então clique aqui e acesse <br/> mais conteúdos no Educa+</span>
-                    <Button style={{fontSize: '3px'}}>Saiba mais</Button>
+                    <span>Gostou? Então clique aqui e acesse <br /> mais conteúdos no Educa+</span>
+                    <Button style={{ fontSize: '3px' }}>Saiba mais</Button>
                 </Grid>
 
                 <Grid item xs={6}>
                     <img className='img_more' src={education} alt="" />
                 </Grid>
-            
+
             </Grid>
 
         </>

@@ -5,6 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import Categoria from '../../../models/Categoria';
 import { buscaId, deleteId } from '../../../services/Service';
+import './DeletarCategoria.css'
 
 function DeletarCategoria() {
     let navigate = useNavigate();
@@ -51,27 +52,31 @@ function DeletarCategoria() {
     return (
         <>
          <Box m={2}>
-        <Card variant="outlined">
+        <Card variant="outlined" className='myContent'>
           <CardContent>
             <Box justifyContent="center">
-              <Typography color="textSecondary" gutterBottom>
-                Deseja excluír a seguinte Categoria?
+              <Typography className="ConfirmingText" color="textSecondary" gutterBottom>
+                Deseja excluir a seguinte Categoria?
               </Typography>
-              <Typography color="textSecondary">
-                {categoria?.tipo}
-                {categoria?.descricao}
+              <Box className="typeSearched">
+              <Typography color="textSecondary" className="typo_decor">
+                Nome: {categoria?.tipo}
               </Typography>
+              <Typography color="textSecondary" className="typo_decor">
+                Descrição: {categoria?.descricao}
+              </Typography>
+              </Box>
             </Box>
           </CardContent>
           <CardActions>
             <Box display="flex" justifyContent="start" ml={1.0} mb={2} >
               <Box mx={2}>
-                <Button onClick={sim} variant="contained" className="marginLeft" size='large' color="primary">
+                <Button onClick={sim} variant="contained" className="button_confirm" size='large' color="primary">
                   Sim, desejo excluir
                 </Button>
               </Box>
               <Box mx={2}>
-                <Button  onClick={nao} variant="contained" size='large' color="secondary">
+                <Button  onClick={nao} variant="contained" className="button_back" size='large' color="secondary">
                   Cancelar
                 </Button>
               </Box>

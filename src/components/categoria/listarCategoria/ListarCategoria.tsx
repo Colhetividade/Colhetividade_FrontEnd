@@ -27,9 +27,9 @@ import ModalCategoria from '../modalCategoria/ModalCategoria';
 
 function ListarCategoria() {
 
+  let navigate = useNavigate();
   const [categorias, setCategorias] = useState<Categoria[]>([])
   const [token, setToken] = useLocalStorage('token');
-  let navigate = useNavigate();
 
   useEffect(() => {
     if (token == '') {
@@ -146,8 +146,7 @@ function ListarCategoria() {
           categorias.map(categorias => (
             <Grid item xs={4} key={categorias.id}>
 
-              <Box display="flex" flexDirection="row" m={2}>
-
+              <Box display="flex" flexDirection="row-reverse" m={2}>
                 <div className="card">
                   <Box display="flex" flexDirection="column" className="container_yuri">
                     <Typography className="titulo-card" noWrap variant="h3">{categorias.tipo}</Typography>
@@ -161,6 +160,7 @@ function ListarCategoria() {
                           </Button>
                         </Box>
                       </Link>
+
                       <Link to={`/deletarCategoria/${categorias.id}`} className="text-decorator-none">
                         <Box mx={1}>
                           <Button className="button_delete" variant="contained" size='small' color="secondary">
@@ -168,6 +168,7 @@ function ListarCategoria() {
                           </Button>
                         </Box>
                       </Link>
+
                     </Box>
                   </Box>
                 </div>

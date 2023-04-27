@@ -1,5 +1,6 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { Box } from '@mui/material';
 import { Container, Typography, TextField, Button } from "@material-ui/core"
 import useLocalStorage from 'react-use-localstorage';
 import Categoria from '../../../models/Categoria';
@@ -66,7 +67,7 @@ function CadastroCategoria(){
                         'Authorization': token
                     }
                 })
-                await history('/categoria')
+                await history('/loading')
                 
                 alert('Categoria cadastrada com Sucesso!');
             } catch (error) {
@@ -79,6 +80,10 @@ function CadastroCategoria(){
     function back(){
         history('/categoria')
     }
+
+    function returned(){
+        history('/loading')
+    }
     
     return (
        <>
@@ -87,9 +92,14 @@ function CadastroCategoria(){
                 <Typography className="typo_size" variant="h3" color="textSecondary" component="h1" align="center" >Cadastrar Categoria</Typography>
                 <TextField value={categoria.tipo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedCategoria(e)} id="tipo" label="Nome da Categoria" variant="outlined" name="tipo" margin="normal" fullWidth />
                 <TextField value={categoria.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedCategoria(e)} id="descricao" label="Descrição da Categoria" variant="outlined" name="descricao" margin="normal" fullWidth />
+                <Box className="buttons">
                 <Button className="btn_send" type="submit" variant="contained" color="primary">
                     Enviar Formulário
                 </Button>
+                <Button className="btn_cancel" onClick={returned} variant="contained" color="primary">
+                  Cancelar
+                </Button>
+                </Box>
             </form>
         </Container>
        </>

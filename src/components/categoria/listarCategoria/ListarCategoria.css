@@ -149,6 +149,7 @@
 
 .container_cards{
   margin-top: 30px!important;
+  width: 100%!important;
 }
 
 .titulo-card {
@@ -162,7 +163,9 @@
 }
 
 .buttons_style {
-  display: flex;
+  display: flex!important;
+  align-items: center!important;
+  justify-content: center!important;
   margin-top: 20px;
 }
 

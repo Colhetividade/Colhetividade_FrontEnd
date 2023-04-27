@@ -244,7 +244,6 @@
     }
 
     .boxTextDescription{
-        background-color: cadetblue;
         height: 200px;
         width: 100%;
     }
@@ -253,4 +252,52 @@
         font-size: 14px;
     }
 
+}
+
+
+@media only screen and (max-width: 360px) {
+    .video{
+        width: 250px ;
+        height: 180px ;
+    }
+
+    .boxTextDescription{
+        height: 200px;
+        width: 90%;
+    }
+
+    #typodesc{
+        font-size: 12px!important;
+    }
+
+    .WhiteText{
+        font-size: 12px!important;
+    }
+
+    .text_acess{
+        font-size: 13px!important;
+    }
+}
+
+
+@media only screen and (max-width: 298px) {
+    
+    .imgDescriptionGrid img {
+        width: 195px;
+        height: 186px;
+    }
+
+    .text_video{
+        font-size: 14px!important;
+    }
+
+    .img_more {
+        width: 117px;
+        height: 129px;
+    }
+
+    .more_section span {
+        font-size: 10px;
+        width: 91px;
+    }
 }
