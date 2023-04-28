@@ -7,7 +7,7 @@ import reactLogo from './assets/react.svg'
 import Navbar from './components/statics/navbar/Navbar'
 import Footer from './components/statics/footer/Footer'
 import Educacao from './pages/educacao/Educacao'
-import BasicModal from './components/statics/modal/Modal'
+
 import './App.css'
 
 function App() {

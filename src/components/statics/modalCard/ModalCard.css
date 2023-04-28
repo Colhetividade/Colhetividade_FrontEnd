@@ -1,0 +1,9 @@
+.txtButton:hover{
+    color: rgb(5, 60, 26);
+}
+.txtButton{
+    display: flex;
+    flex-direction: column;
+
+   font-weight: bold;
+}

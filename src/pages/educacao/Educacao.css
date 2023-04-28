@@ -2,3 +2,36 @@
     background-color: #FAFAFA;
 }
 
+.textoEdu{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 10px;
+
+    max-width: 460px;
+
+    text-align: center;
+
+    justify-content: center;
+    
+    
+}
+
+.texto3{
+    margin-top:50px ;
+
+   
+}
+
+.imagemEduca{
+    background-color:#4f9368;
+
+    border-radius: 50%;
+
+    width: 200px;
+    height: 200px;  
+    
+}
+
+

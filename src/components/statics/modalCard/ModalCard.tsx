@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 
-import './Modal.css'
+import './ModalCard.css'
 
 const style = {
     position: 'absolute' as 'absolute',
@@ -20,7 +20,7 @@ const style = {
 
 export interface ModalProps {
     videoModal: any;
-    txtModal: string;
+    txtModal: any;
 }
 
 export default function BasicModal({ videoModal, txtModal }: ModalProps) {
@@ -29,11 +29,11 @@ export default function BasicModal({ videoModal, txtModal }: ModalProps) {
     const handleClose = () => setOpen(false);
 
     return (
-        <div>
+        <div className='txtButton'>
 
 
             <Button onClick={handleOpen}>
-                <Typography className='txtButton' color="white">Clique Here</Typography>
+                <Typography  color="white">Saiba Mais</Typography>
             </Button>
             <Modal
 
