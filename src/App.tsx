@@ -10,6 +10,7 @@ import ListarProdutos from './components/produtos/listarProdutos/ListarProdutos'
 import CadastroCategoria from './components/categoria/cadastroCategoria/CadastroCategoria';
 import DeletarCategoria from './components/categoria/deletarCategoria/DeletarCategoria';
 import Loading from './components/statics/loading/Loading';
+import './App.css'
 
 function App() {
 

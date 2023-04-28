@@ -63,7 +63,6 @@ function Home() {
                 <Grid item xs={6}>
                     <img className='img_more' src={education} alt="" />
                 </Grid>
-
             </Grid>
 
         </>
