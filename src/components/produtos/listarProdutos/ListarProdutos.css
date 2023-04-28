@@ -1,0 +1,24 @@
+.botao{
+    background-color: white !important;
+    color:#37784f !important;
+    font-weight: bold !important;
+    border: 1px solid #37784f  !important;
+}
+
+.botao:hover{
+    background-color: #37784f !important;
+    color: white !important;
+}
+
+.banner{
+width: 100%;
+}
+
+h1{
+    margin: 20px;
+}
+
+.card-foto{
+    width: 150px;
+    height: 150px;
+}

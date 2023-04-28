@@ -5,47 +5,46 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import blog from '../../../assets/blog.png';
-import logo from '../../../assets/img/logoFooter.png';
+import logo from '../../../assets/img/logobranco.png';
+import './Footer.css'
 
 function Footer() {
     return (
         <>
-            <Grid container direction="row" justifyContent="center" alignItems="center" >
-                <Grid alignItems="center" item xs={12} style={{ backgroundColor: "#6D4F35", height: "120px", display: 'flex', justifyContent: 'center' }}>
-
-                    <Box style={{ width: '65%', height: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-
-
+            <Grid container>
+                <Grid className='containerAll' item xs={12}>
+                    <Box className="boxAll">
                         <Box>
-                            <img src={logo} alt="" width='70px' height='70px' />
+                            <img src={logo} alt="" className='logoImg'/>
                         </Box>
-                        <Box style={{ height: "60px", width: '400px' }}>
+                        <Box className="Items">
+                 
+                        <Box className="boxWrap">
                             <Box paddingTop={1}>
-                                <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "white" }} >© 2020 Copyright:</Typography>
+                                <Typography variant="subtitle2" className="typoName" align="center" gutterBottom style={{ color: "white" }} >2023 | Todos direitos reservados </Typography>
                             </Box>
                             <Box>
+                                <Typography variant="subtitle2" className="typoName" align="center" gutterBottom style={{ color: "white" }} >©Colhetividade</Typography>
+                            </Box>
+                            {/*   <Box>
                                 <a target="_blank" href="https://brasil.generation.org">
                                     <Typography variant="subtitle2" gutterBottom style={{ color: "white" }} align="center">brasil.generation.org</Typography>
                                 </a>
-                            </Box>
+                            </Box> */}
                         </Box>
 
-                        <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center" flexDirection='column' style={{ width: '400px' }}>
-                            <Typography variant="h5" align="center" gutterBottom style={{ color: "white", fontSize: '16px' }}>Siga-nos nas redes sociais </Typography>
-
-                            <Box display="flex" alignItems="center" justifyContent="center">
-                                <a href="https://www.facebook.com/generationbrasil" target="_blank">
-                                    <FacebookIcon style={{ fontSize: 40, color: "white" }} />
-                                </a>
-                                <a href="https://www.instagram.com/generationbrasil/" target="_blank">
-                                    <InstagramIcon style={{ fontSize: 40, color: "white" }} />
-                                </a>
-                                <a href="https://www.linkedin.com/school/generationbrasil/" target="_blank">
-                                    <LinkedInIcon style={{ fontSize: 40, color: "white" }} />
-                                </a>
-                            </Box>
+                        <Box className="networks">
+                            <a href="https://www.facebook.com/generationbrasil" target="_blank">
+                                <FacebookIcon style={{color: "white" }} className="icon_net" />
+                            </a>
+                            <a href="https://www.instagram.com/generationbrasil/" target="_blank">
+                                <InstagramIcon style={{color: "white" }} className="icon_net" />
+                            </a>
+                            <a href="https://www.linkedin.com/school/generationbrasil/" target="_blank">
+                                <LinkedInIcon style={{color: "white" }} className="icon_net" />
+                            </a>
+                        </Box>     
                         </Box>
-
                     </Box>
                 </Grid>
             </Grid>
