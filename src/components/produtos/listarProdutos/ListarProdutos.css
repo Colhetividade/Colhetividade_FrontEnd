@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+    background-color:linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%) ;
+}
+
+.cardCadastro{
+    text-decoration: none;
+    width: 500px;
+    height: 500px;
+    box-shadow: 5px 5px 18px #888888;
+}
 .botao{
     background-color: white !important;
     color:#37784f !important;
@@ -22,3 +35,21 @@ h1{
     width: 150px;
     height: 150px;
 }
+
+
+.preco{
+    font-weight: bolder;
+    color: #37784f  !important;
+}
+
+.excluir, .edit{
+    color: #AFC9B9 !important;
+}
+
+
+/* .icons{
+    position:absolute;
+    top:465px;
+    margin-left: 10.5%;
+
+} */
