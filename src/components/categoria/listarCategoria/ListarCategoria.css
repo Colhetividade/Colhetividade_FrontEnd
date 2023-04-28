@@ -11,6 +11,28 @@
   margin-bottom: 30px;
 }
 
+.swiper-button-next {
+  background-image: url(../../../assets/img/arrow.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+}
+
+.swiper-button-next::after {
+  display: none;
+}
+
+.swiper-button-prev {
+  background-image: url(../../../assets/img/arrowesq.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+}
+
+.swiper-button-prev::after {
+  display: none;
+}
+
 .img {
   /*   width: 250px;
     height: 250px; */
@@ -33,13 +55,13 @@
 .titulo {
   margin-top: 80px;
   text-align: center;
-  font-size: 48px;
+  font-size: 35px;
   font-family: 'Inter', sans-serif;
 }
 
 .descricao {
   margin-top: 15px;
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
   font-family: 'Inter', sans-serif;
 }
@@ -47,7 +69,7 @@
 /* 2º Bloco */
 .swiper {
   background-color: #f4f1f1;
-  width: 1006px;
+  width: 80vw;
   height: 100%;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
@@ -88,7 +110,6 @@
 }
 
 .swiperItems {
-  /* background-color: red !important; */
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -120,7 +141,6 @@
 }
 
 .categoria {
-  background-color: blue;
   display: flex;
   justify-content: center;
 }
@@ -134,7 +154,6 @@
   align-items: center;
   justify-content: center;
 
-
   padding: 10px;
   box-shadow: 5px 5px 18px #888888;
 }
@@ -143,7 +162,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 300px;
+  max-width: 250px;
   /*  ALTERAR AQUI PARA MUDAR O TAMANHO DA ÁREA DO TEXTOS */
 }
 
@@ -180,7 +199,6 @@
 
 .button-card {
   margin-top: 20px;
-  margin-left: 20px;
   background: #afc9b9;
   border-radius: 30px;
   font-size: 19px;
@@ -188,15 +206,14 @@
   text-align: center;
   width: 217px;
   height: 60px;
-  background-color: blue;
 }
 
-.img-card {
+/* .img-card {
   margin-top: 50px;
   margin-left: 0px;
   width: 200px;
   position: absolute;
-}
+} */
 
 .button_atualizar {
   background-color: #AFC9B9 !important;
@@ -214,4 +231,294 @@
 
 .button_delete:hover {
   background-color: #ce8439 !important;
+}
+
+
+
+
+@media only screen and (max-width: 905px) {
+  .descricao {
+    width: 400px;
+  }
+}
+
+@media only screen and (max-width: 997px) {
+  .swiperItems {
+    width: 342px;
+  }
+}
+
+
+@media only screen and (max-width: 897px) {
+  .swiperItems {
+    width: 342px;
+  /*   background-color: red; */
+  }
+  .tipo {
+    font-size: 20px;
+  }
+
+  .promocao {
+    font-size: 22px;
+  }
+
+}
+
+@media only screen and (max-width: 845px) {
+  .swiperItems {
+    width: 300px;
+  }
+
+  .img-swiper {
+    width: 20vw;
+  }  
+}
+
+@media only screen and (max-width: 755px) {
+  .swiperItems {
+    width: 250px;
+  }
+
+  .img-swiper {
+    width: 20vw;
+  }  
+
+  .img {
+    width: 230px;
+    height: 248;
+    margin-top: 15px;
+  }
+}
+
+@media only screen and (max-width: 708px) {
+
+  .card1 {
+    margin-bottom: 60px;
+  }
+}
+
+@media only screen and (max-width: 629px) {
+  .titulo {
+    font-size: 30px;
+  /*   background-color: #FFB468!important; */
+    width: 250px;
+    margin-top: 0px;
+  }
+
+  .box_description {
+/*     background-color: yellow; */
+    height: 150px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+  }
+
+  .descricao {
+    margin-top: 0px;
+    font-size: 18px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+ /*    background-color: crimson; */
+    width: 300px;
+  }
+
+  .swiperItems {
+    width: 210px;
+   /*  background-color: red; */
+  }
+
+  .tipo {
+    font-size: 16px;
+  }
+
+  .promocao {
+    font-size: 22px;
+  }
+
+  .button-swiper {
+    font-size: 16px;
+    width: 100px;
+    height: 52px;
+  }
+ 
+}
+
+
+@media only screen and (max-width: 583px) {
+  .img {
+    display: none;
+    margin-top: 0px;
+  }
+
+  .titulo {
+    font-size: 30px;
+/*     background-color: #FFB468!important; */
+    width: 250px;
+    margin-top: 0px;
+  }
+
+  .box_description {
+ /*    background-color: yellow; */
+    height: 150px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+ 
+  }
+
+  .descricao {
+    margin-top: 0px;
+    font-size: 18px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+/*     background-color: crimson; */
+    width: 300px;
+  }
+
+  .card1 {
+/*     background-color: orange; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    height: 260px;
+  }
+
+  .swiper1{
+/*     background-color: green; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 500px;
+  }
+
+  .swiperItems {
+    width: 300px;
+/*     background-color: red; */
+    height: 150px;
+  }
+
+  .img-swiper {
+    width: 30vw;
+  } 
+}
+
+@media only screen and (max-width: 323px) {
+
+  .box_description {
+    width: 260px;
+  }
+
+  .descricao {
+    font-size: 16px;
+    width: 260px;
+  }
+
+  .titulo {
+    font-size: 22px;
+/*     background-color: #FFB468!important; */
+    width: 250px;
+    margin-top: 0px;
+  }
+
+  .promocao {
+    font-size: 18px;
+  }
+
+}
+
+@media only screen and (max-width: 313px) {
+  .container_yuri {
+    max-width: 200px;
+/*     background-color: red; */
+  }
+
+  .titulo-card {
+    font-size: 18px!important;
+  }
+
+  .valor {
+    font-size: 12px !important;
+  }
+}
+
+@media only screen and (max-width: 271px) {
+  .box_description {
+    width: 230px; 
+  }
+
+  .descricao {
+    font-size: 14px;
+    width: 200px;
+  }
+
+  .titulo {
+    font-size: 18px;
+    width: 200px;
+  }
+  
+}
+
+@media only screen and (max-width: 263px) {
+  .promocao {
+    font-size: 16px;
+  }
+
+  .swiper-button-next {
+    background-size: 70% auto;
+  }
+  
+  .swiper-button-prev {
+    background-size: 70% auto;
+  }
+}
+
+@media only screen and (max-width: 261px) {
+  .container_yuri {
+    max-width: 180px;
+  }
+}
+
+@media only screen and (max-width: 243px) {
+  .container_yuri {
+    max-width: 150px;
+  }
+
+  .titulo-card {
+    font-size: 14px!important;
+  }
+
+  .valor {
+    font-size: 10px !important;
+  }
+
+  .box_description {
+    width: 200px; 
+  }
+
+  .button_atualizar {
+    width: 40px!important;
+    text-transform: capitalize!important;
+  }
+  
+  .button_delete {
+    width: 40px!important;
+    text-transform: capitalize!important;
+  }
+
+  
+.modalBox {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  width: 10px;
+  font-size: 14px!important;
+}
 }

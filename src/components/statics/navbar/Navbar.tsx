@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from '../../../assets/img/logobranco.png';
 import "./Navbar.css";
 import useLocalStorage from "react-use-localstorage";
+import { toast } from 'react-toastify'
 
 function Navbar() {
     const [token, setToken] = useLocalStorage('token');
@@ -13,7 +14,16 @@ function Navbar() {
 
     function goLogout() {
         setToken('')
-        alert("Usuário deslogado")
+        toast.info('Usuário deslogado', {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
         navigate('/login')
     }
 
@@ -60,7 +70,13 @@ function Navbar() {
                                 Sair
                             </Typography>
                         </Box>
-                    ) : null}
+                    ) : 
+                    
+                    <Link to='/login' className='cursor'>
+                    <Typography variant="h6" color="inherit" className="logout">
+                        Entrar
+                    </Typography>
+                </Link>}
 
                 </Toolbar>
             </AppBar>

@@ -6,6 +6,7 @@ import useLocalStorage from 'react-use-localstorage';
 import Categoria from '../../../models/Categoria';
 import { buscaId, post, put } from '../../../services/Service';
 import './CadastroCategoria.css';
+import { toast } from 'react-toastify';
 
 function CadastroCategoria(){
     let history = useNavigate();
@@ -19,7 +20,16 @@ function CadastroCategoria(){
 
     useEffect(() => {
         if (token == '') {
-            alert('Você precisa fazer login!')
+            toast.error('Você precisa estar logado!', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
             history('/login')
         }
     }, [token])
@@ -55,9 +65,27 @@ function CadastroCategoria(){
                         'Authorization': token
                     }
                 })
-                alert('Categoria atualizada com Sucesso!');
+                toast.success('Categoria Atualizada com Sucesso!', {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
             } catch (error) {
-                alert("Erro ao atualizar, Por favor verifique os campos")
+                toast.error('Erro ao Atualizar, Por favor verifique os campos', {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
             }
 
         } else {
@@ -67,11 +95,28 @@ function CadastroCategoria(){
                         'Authorization': token
                     }
                 })
+                toast.success('Categoria Cadastrada com Sucesso!', {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
                 await history('/loading')
-                
-                alert('Categoria cadastrada com Sucesso!');
             } catch (error) {
-                alert("Erro ao Cadastrar, Por favor verifique os campos")
+                toast.error('Erro ao Cadastrar, Por favor verifique os campos', {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
             }
         }
         back()
