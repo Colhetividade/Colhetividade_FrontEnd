@@ -17,8 +17,6 @@ function Navbar() {
         navigate('/login')
     }
 
-
-
     return (
         <>
             <AppBar position="static" className="nav">
