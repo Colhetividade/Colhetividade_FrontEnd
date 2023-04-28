@@ -10,11 +10,14 @@ import TextField from '@mui/material/TextField';
 import UserLogin from '../../models/UserLogin';
 import { login } from '../../services/Service';
 import './Login.css'
+import { useDispatch } from 'react-redux';
+import { addToken } from '../../store/tokens/actions';
 import { toast } from 'react-toastify';
 
 function Login() {
     let navigate = useNavigate();
-    const [token, setToken] = useLocalStorage('token');
+    const dispatch = useDispatch(); 
+    const [token, setToken] = useState('');
     const [userLogin, setUserLogin] = useState<UserLogin>({
         id: 0,
         nome: "",
@@ -33,16 +36,15 @@ function Login() {
     }
     useEffect(() => {
         if (token != '') {
+            dispatch(addToken(token))
             navigate('/home')
         }
     }, [token])
 
     async function logar(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-
         try {
             await login(`/usuarios/logar`, userLogin, setToken)
-
             toast.success('Usuário logado com sucesso!', {
                 position: "top-right",
                 autoClose: 3000,

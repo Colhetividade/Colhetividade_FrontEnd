@@ -1,24 +1,11 @@
+import React from 'react';
 import { Grid, Typography, Button } from '@material-ui/core';
-import React, { useEffect } from 'react';
 import { Box } from '@mui/material';
-import banner from '../../assets/img/banner_home.png'
 import './Home.css'
 import description from '../../assets/img/description_home.png'
 import education from '../../assets/img/Education_home.png'
-import { useNavigate } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 
 function Home() {
-    let navigate = useNavigate();
-    const [token, setToken] = useLocalStorage('token');
-
-   /*  useEffect(() => {
-        if (token == '') {
-            alert("Você precisa estar logado")
-            navigate("/login")
-        }
-    }, [token]) */
-
     return (
         <>
             <Grid container>

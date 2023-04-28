@@ -68,7 +68,7 @@
 }
 
 .alinhar3 {
-    background-image: url("https://i.imgur.com/qqHANPI.jpg");
+    background-image: url("https://i.imgur.com/qqHANPI.jpg")!important;
     background-repeat: no-repeat;
     width: 100vh;
     min-height: 100vh;
@@ -76,12 +76,12 @@
     background-position: center;
 }
 
-form input {
+.formulario_input {
     padding: 16px !important;
     border-radius: 15px !important;
 }
 
-label:hover {
+.label:hover {
     color: green !important;
 
 }

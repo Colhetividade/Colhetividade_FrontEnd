@@ -24,13 +24,17 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper';
 import ModalCategoria from '../modalCategoria/ModalCategoria';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify'
 
 function ListarCategoria() {
 
   let navigate = useNavigate();
   const [categorias, setCategorias] = useState<Categoria[]>([])
-  const [token, setToken] = useLocalStorage('token');
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
 
   useEffect(() => {
     if (token == '') {

@@ -36,8 +36,8 @@
 .img {
   /*   width: 250px;
     height: 250px; */
-  width: 300px;
-  height: 318;
+  width: 300px!important;
+  height: 318px!important;
   margin-top: 15px;
 }
 
@@ -80,7 +80,7 @@
   font-size: 29px;
   line-height: 34px;
   text-align: center;
-  color: #37784f;
+  color: #37784f!important;
 }
 
 .mySwiper {
@@ -101,7 +101,7 @@
   font-size: 25px;
   line-height: 30px;
   text-align: center;
-  background: #37784f;
+  background: #37784f!important;
   border-radius: 20px;
   border: none;
   color: white;
@@ -135,7 +135,7 @@
 /* 3º Bloco */
 
 .content_card {
-  background-color: #37784F;
+  background-color: #37784F!important;
   width: 500px;
   height: 350px;
 }
@@ -149,7 +149,7 @@
   width: 500px;
   height: 220px;
   border-radius: 11px;
-  background-color: #37784F;
+  background-color: #37784F!important;
   display: flex;
   align-items: center;
   justify-content: center;

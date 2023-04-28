@@ -6,13 +6,17 @@ import useLocalStorage from 'react-use-localstorage';
 import Categoria from '../../../models/Categoria';
 import { buscaId, deleteId } from '../../../services/Service';
 import './DeletarCategoria.css'
+import { TokenState } from '../../../store/tokens/tokensReducer';
+import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify'
 
 function DeletarCategoria() {
   let navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
-  const [token, setToken] = useLocalStorage('token');
   const [categoria, setCategoria] = useState<Categoria>()
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
 
   useEffect(() => {
     if (token == "") {

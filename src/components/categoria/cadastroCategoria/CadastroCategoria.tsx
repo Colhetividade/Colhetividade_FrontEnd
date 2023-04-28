@@ -6,12 +6,17 @@ import useLocalStorage from 'react-use-localstorage';
 import Categoria from '../../../models/Categoria';
 import { buscaId, post, put } from '../../../services/Service';
 import './CadastroCategoria.css';
+import { TokenState } from '../../../store/tokens/tokensReducer';
+import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 
 function CadastroCategoria(){
     let history = useNavigate();
     const { id } = useParams<{ id: string }>();
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+      );
+
     const [categoria, setCategoria] = useState<Categoria>({
         id: 0,
         tipo:'',

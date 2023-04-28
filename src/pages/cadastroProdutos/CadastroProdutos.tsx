@@ -19,9 +19,9 @@ function CadastroProdutos() {
 
                         <Card className="card borda" sx={{ maxWidth: 500, minHeight: 500 }}>
                             <CardContent>
-                                <form>
+                                <form >
 
-                                    <TextField label="Nome do Produto" className="form-text borda" fullWidth />
+                                    <TextField label="Nome do Produto" className="form-text borda" fullWidth  />
 
                                     <TextField label="Quantidade" className="form-text borda"  fullWidth />
 
