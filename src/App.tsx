@@ -10,8 +10,9 @@ import ListarProdutos from './components/produtos/listarProdutos/ListarProdutos'
 import CadastroCategoria from './components/categoria/cadastroCategoria/CadastroCategoria';
 import DeletarCategoria from './components/categoria/deletarCategoria/DeletarCategoria';
 import Loading from './components/statics/loading/Loading';
+import CadastroProduto from './components/produtos/cadastroProdutos/CadastroProdutos';
+import DeletarProduto from './components/produtos/deletarProdutos/DeletarProdutos';
 import './App.css'
-
 function App() {
 
   return (
@@ -29,6 +30,10 @@ function App() {
           <Route path="/formularioCategoria/:id" element={<CadastroCategoria />} />
           <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
           <Route path="/loading" element={<Loading />} />
+          <Route path="/cadastrarProduto" element={<CadastroProduto />} />
+          <Route path="/atualizarProduto/:id" element={<CadastroProduto />} />
+          <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
+
         </Routes>
       </div>
       <Footer />

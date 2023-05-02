@@ -4,7 +4,7 @@
 
 .banner_home{
     background-color: black;
-    background-image: url(../../assets/img/home.jpg);
+    background-image: url(../../assets/img/home.jpg)!important;
     background-size:cover;
     height: 415px;
     background-repeat: no-repeat;
