@@ -23,6 +23,7 @@
 .logo{
     width: 75px;
     height: 75px;
+    margin-top: 150px!important;
 }
 
 .botao{
@@ -75,14 +76,7 @@ border: 0px none #e2e2e1 !important;
     align-items: center;
     flex-flow: row nowrap;
     font-family: 'Inter', sans-serif;
-
-}
-
-
-
-.logo{
-    width: 75px;
-    height: 75px;
+    margin-bottom: 150px;
 }
 
 .card{

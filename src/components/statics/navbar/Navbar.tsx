@@ -5,15 +5,32 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from '../../../assets/img/logobranco.png';
 import "./Navbar.css";
 import useLocalStorage from "react-use-localstorage";
+import { toast } from 'react-toastify'
+import { useDispatch, useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/tokensReducer";
+import { addToken } from "../../../store/tokens/actions";
 
 function Navbar() {
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
     let navigate = useNavigate();
+    
+    const dispatch = useDispatch();
     const isLoggedIn = token !== '';
 
     function goLogout() {
-        setToken('')
-        alert("Usuário deslogado")
+        dispatch(addToken(''));
+        toast.info('Usuário deslogado', {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
         navigate('/login')
     }
 
@@ -60,7 +77,12 @@ function Navbar() {
                                 Sair
                             </Typography>
                         </Box>
-                    ) : null}
+                    ) : 
+                    <Link to='/login' className='cursor'>
+                    <Typography variant="h6" color="inherit" className="logout">
+                        Entrar
+                    </Typography>
+                </Link>}
 
                 </Toolbar>
             </AppBar>

@@ -6,11 +6,17 @@ import useLocalStorage from 'react-use-localstorage';
 import Categoria from '../../../models/Categoria';
 import { buscaId, post, put } from '../../../services/Service';
 import './CadastroCategoria.css';
+import { TokenState } from '../../../store/tokens/tokensReducer';
+import { useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 
 function CadastroCategoria(){
     let history = useNavigate();
     const { id } = useParams<{ id: string }>();
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+      );
+
     const [categoria, setCategoria] = useState<Categoria>({
         id: 0,
         tipo:'',
@@ -19,7 +25,16 @@ function CadastroCategoria(){
 
     useEffect(() => {
         if (token == '') {
-            alert('Você precisa fazer login!')
+            toast.error('Você precisa estar logado!', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
             history('/login')
         }
     }, [token])
@@ -55,9 +70,27 @@ function CadastroCategoria(){
                         'Authorization': token
                     }
                 })
-                alert('Categoria atualizada com Sucesso!');
+                toast.success('Categoria Atualizada com Sucesso!', {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
             } catch (error) {
-                alert("Erro ao atualizar, Por favor verifique os campos")
+                toast.error('Erro ao Atualizar, Por favor verifique os campos', {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
             }
 
         } else {
@@ -67,11 +100,28 @@ function CadastroCategoria(){
                         'Authorization': token
                     }
                 })
+                toast.success('Categoria Cadastrada com Sucesso!', {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
                 await history('/loading')
-                
-                alert('Categoria cadastrada com Sucesso!');
             } catch (error) {
-                alert("Erro ao Cadastrar, Por favor verifique os campos")
+                toast.error('Erro ao Cadastrar, Por favor verifique os campos', {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
             }
         }
         back()
@@ -89,7 +139,7 @@ function CadastroCategoria(){
        <>
         <Container maxWidth="sm" className="topo">
             <form className='formAll' onSubmit={onSubmit}>
-                <Typography className="typo_size" variant="h3" color="textSecondary" component="h1" align="center" >Cadastrar Categoria</Typography>
+                <Typography className="typo_size" variant="h3" color="textSecondary" component="h1" align="center" >Formulário Categoria</Typography>
                 <TextField value={categoria.tipo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedCategoria(e)} id="tipo" label="Nome da Categoria" variant="outlined" name="tipo" margin="normal" fullWidth />
                 <TextField value={categoria.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedCategoria(e)} id="descricao" label="Descrição da Categoria" variant="outlined" name="descricao" margin="normal" fullWidth />
                 <Box className="buttons">

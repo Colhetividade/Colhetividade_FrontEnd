@@ -11,14 +11,30 @@ import EditIcon from '@material-ui/icons/Edit';
 import { red } from '@mui/material/colors';
 import { Box } from "@mui/material";
 import banner from '../../../assets/img/banner_home.png';
+
+import { toast } from 'react-toastify'
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
+
 function ListarProdutos() {
   const [produtos, setProdutos] = useState<Produto[]>([])
-  const [token, setToken] = useLocalStorage('token');
   let navigate = useNavigate();
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+ );
 
   useEffect(() => {
     if (token == "") {
-      alert("Você precisa estar logado")
+      toast.error('Você precisa estar logado!', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+    });
       navigate("/login")
 
     }
@@ -45,7 +61,7 @@ function ListarProdutos() {
           <Grid alignItems="center" item className='banner_produtos' >
             <Box >
               <Typography variant="h1" gutterBottom color="textPrimary" className="text-decoration-none nameBanner"component="h1" align="center">Produtos</Typography>
-              <Link to="/cadastrarProduto">
+              <Link to="/cadastrarProduto" className='textdecoration'>
               <Button className="btn">Cadastrar um novo produto</Button>
               </Link>
             </Box>
@@ -55,7 +71,6 @@ function ListarProdutos() {
      
       <h1> Nossos Produtos </h1>
       <Grid container spacing={2}>
-
         {
           produtos.map(produto => (
             <Grid className="card-produtos" item xs={3} key={produto.id}>
@@ -80,7 +95,9 @@ function ListarProdutos() {
                   </Typography>
                 </CardContent>
                 <CardActions>
+                <Link to={`/carrinho/${produto.id}`} className="text-decorator-none">
                   <Button className="botao1">Adicionar ao carrinho</Button>
+                  </Link>
                 </CardActions>
               </Card>
             </Grid>

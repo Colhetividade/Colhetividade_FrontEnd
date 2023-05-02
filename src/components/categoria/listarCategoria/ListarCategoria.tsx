@@ -24,16 +24,31 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper';
 import ModalCategoria from '../modalCategoria/ModalCategoria';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify'
 
 function ListarCategoria() {
 
   let navigate = useNavigate();
   const [categorias, setCategorias] = useState<Categoria[]>([])
-  const [token, setToken] = useLocalStorage('token');
+  
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
 
   useEffect(() => {
     if (token == '') {
-      alert("Você precisa estar logado")
+      toast.error('Você precisa estar logado!', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+    });
       navigate("/login")
     }
   }, [token])
@@ -58,11 +73,11 @@ function ListarCategoria() {
   };
   return (
     <>
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" className='testes'>
         {/* CARD */}
         <Box className="card1" display="flex" flexDirection="row">
           <Box>
-            <img className="img" src={foto1} alt="imagem de homem negro segurando um punhado de flores." />
+            <img className="img" src={foto1} alt="imagem de homem negro segurando um punhado de guaraná." />
           </Box>
           <Box className="box_description">
             <h1 className='titulo'> Categoria dos produtos</h1>
@@ -140,11 +155,10 @@ function ListarCategoria() {
           </Swiper>
         </Box>
       </Container >
-
       <Grid container className="container_cards" spacing={2}>
         {
           categorias.map(categorias => (
-            <Grid item xs={4} key={categorias.id}>
+            <Grid item xs={12} sm={6} md={4} key={categorias.id}>
 
               <Box display="flex" flexDirection="row-reverse" m={2}>
                 <div className="card">

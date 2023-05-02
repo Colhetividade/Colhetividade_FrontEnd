@@ -1,4 +1,3 @@
-
 import React, { useState, ChangeEvent, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
@@ -11,9 +10,14 @@ import TextField from '@mui/material/TextField';
 import UserLogin from '../../models/UserLogin';
 import { login } from '../../services/Service';
 import './Login.css'
+import { useDispatch } from 'react-redux';
+import { addToken } from '../../store/tokens/actions';
+import { toast } from 'react-toastify';
+
 function Login() {
     let navigate = useNavigate();
-    const [token, setToken] = useLocalStorage('token');
+    const dispatch = useDispatch(); 
+    const [token, setToken] = useState('');
     const [userLogin, setUserLogin] = useState<UserLogin>({
         id: 0,
         nome: "",
@@ -30,22 +34,40 @@ function Login() {
             [e.target.name]: e.target.value
         })
     }
+    
     useEffect(() => {
         if (token != '') {
+            dispatch(addToken(token))
             navigate('/home')
         }
     }, [token])
 
     async function logar(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-
         try {
             await login(`/usuarios/logar`, userLogin, setToken)
-
-            alert('Usuário logado com sucesso')
+            toast.success('Usuário logado com sucesso!', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
         }
         catch (error) {
-            alert('Dados do usuário estão inconsistentes')
+            toast.error('Dados do usuário estão inconsistentes', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
         }
 
     }
@@ -55,7 +77,7 @@ function Login() {
             <Box className='cardStyle'>
                 <img className='logo' src="/logo.png" alt="" />
                 <Typography variant='h4' gutterBottom color="textPrimary" component='h4' align='center' style={{ fontWeight: 'bold' }}>Login</Typography>
-                <Card className='curvaBorda color card' sx={{ minWidth: 500, minHeight: 500}}  >
+                <Card className='curvaBorda color card' sx={{ minWidth: 500, minHeight: 380 }}  >
                     <CardContent>
                         <form className='card2' onSubmit={logar}>
                             <TextField className='formText curvaBorda' value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal' fullWidth></TextField>

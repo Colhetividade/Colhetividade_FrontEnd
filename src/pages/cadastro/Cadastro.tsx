@@ -8,6 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { cadastro } from '../../services/Service';
 import User from '../../models/User';
 import './Cadastro.css'
+import { toast } from 'react-toastify'
 
 export default function Cadastro() {
     let history = useNavigate()
@@ -52,18 +53,36 @@ export default function Cadastro() {
         e.preventDefault()
         if (confirmarSenha == user.senha) {
             cadastro(`/usuarios/cadastrar`, user, setUserResult)
-            alert('Usuário cadastrado com sucesso')
+            toast.success('Usuário Cadastrado com sucesso!', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
 
         } else {
-            alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
+            toast.info('Dados inconsistentes. Favor verificar as informações de cadastro.', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
         }
     }
     return (
         <Grid container className='cardStyle'>
             <Box className='cardStyle'>
-                <img className='logo margin1' src="/logo.png" alt="" />
+                <img className='logo' src="/logo.png" alt="" />
                 <Typography className='margin1' variant='h4' gutterBottom color="textPrimary" component='h4' align='center' style={{ fontWeight: 'bold' }}>Cadastre-se</Typography>
-                <Card className='curvaBorda color card margin1' sx={{ minWidth: 500, minHeight: 500 }}  >
+                <Card className='curvaBorda color card margin1' sx={{ minWidth: 600, minHeight: 580 }}  >
                     <CardContent>
                         <form onSubmit={cadastrar}>
                             <TextField className='formText curvaBorda' value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' label='nome' variant='outlined' name='nome' margin='normal' placeholder='Insira seu nome' required fullWidth></TextField>

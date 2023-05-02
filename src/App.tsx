@@ -13,15 +13,23 @@ import Loading from './components/statics/loading/Loading';
 import CadastroProduto from './components/produtos/cadastroProdutos/CadastroProdutos';
 import DeletarProduto from './components/produtos/deletarProdutos/DeletarProdutos';
 import './App.css'
+import Cart from './components/carrinho/Carrinho';
+import { Provider } from 'react-redux';
+import store from './store/store';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
 
   return (
+    <Provider store={store}>
+    <ToastContainer />
     <BrowserRouter>
       <Navbar />
       <div style={{ minHeight: '100vh' }}>
         <Routes>
           <Route path="/home" element={<Home />}></Route>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/categoria" element={<ListarCategoria />} />
@@ -33,11 +41,12 @@ function App() {
           <Route path="/cadastrarProduto" element={<CadastroProduto />} />
           <Route path="/atualizarProduto/:id" element={<CadastroProduto />} />
           <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
-
+          <Route path="/carrinho/:id" element={<Cart />} />
         </Routes>
       </div>
       <Footer />
     </BrowserRouter>
+    </Provider>
   )
 }
 export default App
