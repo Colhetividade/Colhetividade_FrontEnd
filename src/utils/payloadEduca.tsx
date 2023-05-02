@@ -6,12 +6,12 @@ export const cardProps = [
     cardConteudo: "A agricultura familiar é importante para a economia, a biodiversidade e a segurança alimentar, sendo uma fonte de renda e subsistência para milhões de famílias em todo o mundo.",
     imagemInfo: {
       url: "https://i.imgur.com/dUfGfSB.jpg",
-      alt: "prince"
+      alt: "Uma familia um uma plantação, ao por do sol"
     },
-    id: "1",
+
     modalProps: {
       videoModal: <iframe width="560" height="315" src="https://www.youtube.com/embed/kq7-mPkmaWs" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen> </iframe>,
-      txtModal: <div>
+      txtModal: <div className="textoModal">
         <p>
           A agricultura familiar é um dos principais setores da economia em muitos países, sendo responsável por grande parte da produção de alimentos consumidos pela população local e nacional. Além disso, a agricultura familia
         </p><br />
@@ -34,10 +34,10 @@ export const cardProps = [
       url: "https://thumbs.dreamstime.com/b/colheita-do-arroz-na-%C3%ADndia-rural-almofadas-de-arroz-campo-indiano-62878831.jpg",
       alt: "Pessoas trabalhando num campo verde"
     },
-    id: "2",
+
     modalProps: {
       videoModal: <iframe width="560" height="240" src="https://www.youtube.com/embed/-sw1pgc3_RA" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>,
-      txtModal: <div>
+      txtModal: <div className="textoModal">
         <p>
           As hortas urbanas ajudam a melhorar o microclima tanto nas ruas como dentro de casa,  e ajuda a recupera áreas degradadas se tornando uma solução simples para esse problema. Além de contribuir com a revitalização de terrenos inutilizados, as hortas urbanas deixam as cidades mais bonitas e agradáveis, contribuindo para a saúde física e mental dos moradores.</p>
         <p><br />
@@ -71,7 +71,7 @@ export const cardProps = [
       url: "https://imagens.usp.br/wp-content/uploads/Horta-das-Flores_Foto-Marcos-Santos_U0Y4005-scaled.jpg",
       alt: "uma horta com pessoas ao fundo"
     },
-    id: "3",
+
     modalProps: {
       videoModal: <iframe width="560" height="260" src="https://www.youtube.com/embed/sZNgj4DXA8Y" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>,
       txtModal: <div className="textoModal">
@@ -103,10 +103,10 @@ export const cardProps = [
       url: " https://cdn.pixabay.com/photo/2017/09/26/13/36/apple-2788638_1280.jpg",
       alt: "prince"
     },
-    id: "4",
+
     modalProps: {
       videoModal: <iframe width="560" height="260" src="https://www.youtube.com/embed/QE5cTgN9Pck" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>,
-      txtModal: <div>
+      txtModal: <div className="textoModal">
         <p>
           Para iniciarmos o passo a passo para plantação de uma frutífera, visando o seu ideal desenvolvimento, faremos abaixo um passo a passo:<br /><br />
 
@@ -140,10 +140,10 @@ export const cardProps = [
       url: "https://elysios.com.br/wp-content/uploads/elementor/thumbs/Sem-T%C3%ADtulo-1-phmamjisx6m65nb3xg1wq5r0zcxd3sbhelaa9qr54w.jpg",
       alt: "Homem em uma horta com uma enchada nas costas"
     },
-    id: "5",
+
     modalProps: {
       videoModal: "",
-      txtModal: <div>
+      txtModal: <div className="textoModal">
         <p>
           No Brasil, a agricultura familiar enfrenta muitos dos mesmos desafios que em outros lugares, mas também enfrenta problemas específicos do país. Alguns dos principais problemas da agricultura familiar no Brasil incluem:<br /><br />
 
@@ -168,16 +168,26 @@ export const cardProps = [
 
   },
   {
-    tituloCard: "Titulo card",
-    cardConteudo: "Mussum Ipsum, cacilds vidis litro abertis. Quem num gosta di mé, boa gentis num é.Sapien in monti palavris qui num significa nadis i pareci latim.Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum.Viva Forevis aptent taciti sociosqu ad litora torquent.",
+    tituloCard: "Brasil é líder mundial em produção agrícola sustentável",
+    cardConteudo: "O Brasil está no centro da produção agropecuária sustentável em todo o mundo e tem muito a contribuir para a oferta global de alimentos e energia",
     imagemInfo: {
-      url: "https://i.ytimg.com/vi/bSiW7rObu3I/maxresdefault.jpg",
-      alt: "prince"
+      url: "https://imagens-cdn.canalrural.com.br/wp-content/uploads/plantacao-soja-Reproducao-Canal-Rural-640x323.png",
+      alt: "campo de plantação com duas arvores ao fundo"
     },
-    id: "4",
+
     modalProps: {
-      videoModal: <iframe width="560" height="315" src="https://www.youtube.com/embed/GUppN-HvaBk" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen > </iframe>,
-      txtModal: "SDASDASDADjozusad"
+      videoModal: "",
+      txtModal: <div className="textoModal">
+
+        <p>
+          O Brasil lidera a produção agropecuária sustentável em todo o mundo e tem muito a contribuir para a oferta global de alimentos e energia, segundo uma nota técnica do Instituto de Pesquisa Econômica Aplicada (Ipea). O estudo comparou a posição do Brasil em diversos indicadores de sustentabilidade com sete grandes agroexportadores e destacou dois indicadores: o efeito poupa-florestas e a emissão de gases de efeito estufa por unidade de produção. O Brasil liderou ambos os indicadores, com 43,2% do território nacional poupado e a melhor taxa de crescimento na produção agropecuária por emissões totais de gases estufa entre 1990 e 2020.<br /><br />
+
+          Os resultados do estudo demonstram que um quilo de alimento produzido hoje no Brasil gera menos emissões, e que o país lidera essa corrida mundial por uma produção mais sustentável. Além disso, o investimento em fontes de energia renovável está moldando as políticas em todo o mundo e o Brasil está à frente de seus principais competidores. O presidente do Ipea, Erik Figueiredo, destacou que o Brasil se tornou referência no mundo em equilíbrio ambiental e produção de alimentos.<br /><br />
+
+          O estudo lançado pelo Ipea durante o seminário Agricultura, Pecuária, Energia e o Efeito Poupa-Florestas: Um Comparativo Internacional contou com a presença de autoridades e especialistas brasileiros e de organismos internacionais. O evento analisou a posição do Brasil em diversos indicadores de sustentabilidade frente a sete grandes agroexportadores, incluindo Argentina, Canadá, China, França, Alemanha, Índia e Estados Unidos. A nota técnica do Ipea reuniu dados de qualidade e uma abordagem bastante clara e sintética, em duas versões, português e inglês.
+        </p>
+
+      </div>
 
     }
 

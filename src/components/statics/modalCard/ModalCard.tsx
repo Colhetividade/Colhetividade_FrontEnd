@@ -16,6 +16,7 @@ const style = {
     border: '2px solid #000',
     boxShadow: 24,
     p: 4,
+    borderRadius: "11%"
 };
 
 export interface ModalProps {
@@ -32,8 +33,8 @@ export default function BasicModal({ videoModal, txtModal }: ModalProps) {
         <div className='txtButton'>
 
 
-            <Button onClick={handleOpen}>
-                <Typography  color="white">Saiba Mais</Typography>
+            <Button className='btnModal'  onClick={handleOpen}>
+                <Typography color="#212121" variant='h5'>Saiba Mais</Typography>
             </Button>
             <Modal
 
