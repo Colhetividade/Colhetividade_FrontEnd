@@ -1,11 +1,15 @@
 import { useEffect, useState, ChangeEvent } from 'react'
-import { Box } from '@mui/material'
+import { Box, Grid } from '@mui/material'
 import { Button, Card, TextField, Typography } from '@material-ui/core'
 import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { TokenState } from '../../store/tokens/tokensReducer'
+
 import Produto from '../../models/Produto'
 import { buscaId } from '../../services/Service'
+
 import './Carrinho.css'
-import useLocalStorage from 'react-use-localstorage'
+import { toast } from 'react-toastify'
 
 function Carrinho() {
 
@@ -15,7 +19,9 @@ function Carrinho() {
     const { id } = useParams<{ id: string }>()
 
     // Substituir para o uso com Redux
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    )
 
     // State para guardar a quantidade escolhida pela P. Usuaria 
     const [quantidadeFinal, setQuantidadeFinal] = useState(0)
@@ -23,22 +29,31 @@ function Carrinho() {
     // State para guardar as informações do Produto retornadas pelo Back
     const [produto, setProduto] = useState<Produto>({
         id: 0,
-        nomeProduto: "Hortaliças",
-        quantidade: 10,
-        preco: 8.50,
-        fotoProduto: "https://www.paversul.com.br/wp-content/uploads/2019/03/o-que-vender-em-loja-de-produtos-naturais-facebook.jpg",
+        nomeProduto: '',
+        quantidade: 0,
+        preco: 0,
+        fotoProduto: '',
         doacaoTotal: 0,
-        isDoacao: false
+        isDoacao: false,
     })
 
-    useEffect(() => {
-        if (token === "") {
-            alert("Você precisa estar logado")
-            history("/login")
-        }
-    }, [token])
+    /* useEffect(() => {
+        if (token == '') {
+            toast.error('Você precisa estar logado!', {
+              position: "top-right",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+          });
+          history("/login")
+          }
+        }, [token]) */
 
-    
+
     // Vai disparar a função findByIdProduto sempre que o ID for diferente que Undefined
     useEffect(() => {
         if (id !== undefined) {
@@ -68,74 +83,85 @@ function Carrinho() {
 
     // Função que simula a compra Efetuada com sucesso
     function confirmSales() {
-        alert("Compra Confirmada! Verifique o seu email!")
-        history("/posts")
+        toast.success("Compra Confirmada! Verifique o seu email!", {
+            position: "top-center",
+            autoClose: 4000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            });
+        history("/produtos")
     }
 
     return (
         <>
-            <Box m={2} display="flex" justifyContent="center">
-                <Card variant="outlined" className='cardContainer'>
+            <Grid container className='containerWrap'>
 
-                    <div className='cardProduct'>
-                        <img src={produto.fotoProduto} alt="Img" className='imgCart' />
+                <Box className='display'>
+                    <Card variant="outlined" className='cardContainer'>
 
-                        <div className='cardProductInfo'>
-                            <Typography color="textSecondary" gutterBottom>
-                                Postagens
-                            </Typography>
+                        <div className='cardProduct'>
+                            <img src={produto.fotoProduto} alt="Img" />
 
-                            <Typography variant="h5" component="h2">
-                                {produto.nomeProduto}
-                            </Typography>
+                            <div className='cardProductInfo'>
+                             
+                                <Typography variant="h5" component="h2" className='nameProduct'>
+                                    {produto.nomeProduto}
+                                </Typography>
 
-                            <Typography variant="body2" component="p">
-                                R$ {produto.preco}
-                            </Typography>
+                                <Typography variant="body2" component="p" className='top'>
+                                    R$ {produto.preco},00
+                                </Typography>
 
-                            <Typography variant="body2" component="p">
-                                Quantidade Máx: {produto.quantidade}
-                            </Typography>
+                                <Typography variant="body2" component="p">
+                                    Quantidade Máx: {produto.quantidade}
+                                </Typography>
 
-                            <TextField
-                                value={quantidadeFinal}
-                                onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange(e)}
+                                <Typography className='inputquantitywrap'>Quantidade:</Typography>
+                                <TextField
+                                    value={quantidadeFinal}
+                                    onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange(e)}
 
-                                // Propriedade que define o limite minimo e máximo de itens que podem ser comprados
-                                InputProps={{ inputProps: { min: 1, max: produto.quantidade } }}   
+                                    // Propriedade que define o limite minimo e máximo de itens que podem ser comprados
+                                    InputProps={{ inputProps: { min: 1, max: produto.quantidade } }}
 
-                                id="quantidade" label="quantidade" type="number" variant="outlined"
-                                name="quantidade" margin="normal" fullWidth
-                            />
+                                    id="quantidade" type="number" variant="outlined"
+                                    name="quantidade" margin="normal" fullWidth className='inputquantity'
+    
+                                />
 
-                            <Typography variant="body2" component="p">
-                                Total: R$ {valorTotal()}
-                            </Typography>
+                                <span className='total'>
+                                     R$ {valorTotal()},00
+                                </span>
+                            </div>
                         </div>
-                    </div>
-
-                </Card>
-
-                <Box display="flex" flexDirection="column" justifyContent="center" mb={1.5}>
-
-                    <Box className="cardProductButton">
-                        <Box mx={1}>
-                            <Button onClick={confirmSales} variant="contained" size='small' color="primary">
-                                Confimar Compra
-                            </Button>
-                        </Box>
-                    </Box>
-
-                    <Link to="/posts" className="cardProductButton">
-                        <Box mx={1}>
-                            <Button variant="contained" size='small' color="secondary">
-                                Cancelar
-                            </Button>
-                        </Box>
-                    </Link>
-
+                    </Card>
                 </Box>
-            </Box>
+
+                    <Box className='display boxbutton' mb={1.5}>
+
+                        <Box className="cardProductButton">
+                            <Box mx={1}>
+                                <Button onClick={confirmSales} variant="contained" size='small' className='btnconfirm'>
+                                    Confimar Compra
+                                </Button>
+                            </Box>
+                        </Box>
+
+                        <Link to="/produtos" className="cardProductButton">
+                            <Box mx={1}>
+                                <Button variant="contained" size='small' className='btncancel'>
+                                    Cancelar
+                                </Button>
+                            </Box>
+                        </Link>
+
+                    </Box>
+               
+            </Grid>
         </>
     )
 }

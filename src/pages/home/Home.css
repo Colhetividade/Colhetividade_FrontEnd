@@ -94,6 +94,10 @@
     color: rgb(218, 216, 216);
 }
 
+.text-decoration-none{
+    text-decoration: none;
+}
+
 .video_section{
     width: 100%;
     display: flex;

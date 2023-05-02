@@ -34,6 +34,7 @@ function Login() {
             [e.target.name]: e.target.value
         })
     }
+    
     useEffect(() => {
         if (token != '') {
             dispatch(addToken(token))
@@ -76,7 +77,7 @@ function Login() {
             <Box className='cardStyle'>
                 <img className='logo' src="/logo.png" alt="" />
                 <Typography variant='h4' gutterBottom color="textPrimary" component='h4' align='center' style={{ fontWeight: 'bold' }}>Login</Typography>
-                <Card className='curvaBorda color card' sx={{ minWidth: 500, minHeight: 500 }}  >
+                <Card className='curvaBorda color card' sx={{ minWidth: 500, minHeight: 380 }}  >
                     <CardContent>
                         <form className='card2' onSubmit={logar}>
                             <TextField className='formText curvaBorda' value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal' fullWidth></TextField>

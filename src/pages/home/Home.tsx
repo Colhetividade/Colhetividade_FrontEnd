@@ -4,6 +4,7 @@ import { Box } from '@mui/material';
 import './Home.css'
 import description from '../../assets/img/description_home.png'
 import education from '../../assets/img/Education_home.png'
+import { Link } from 'react-router-dom';
 
 function Home() {
     return (
@@ -34,7 +35,9 @@ function Home() {
 
                 <Grid alignItems="center" className='acess_section'>
                     <Typography className="text_acess">Descubra uma vasta diversidade de produtos!</Typography>
+                    <Link to='/produtos' className='text-decoration-none'>
                     <Button className='btn-acess'>Acessar</Button>
+                    </Link>
                 </Grid>
 
                 <Grid className='video_section'>
@@ -43,8 +46,10 @@ function Home() {
                 </Grid>
 
                 <Grid item xs={6} className='more_section'>
-                    <span>Gostou? Então clique aqui e acesse <br /> mais conteúdos no Educa+</span>
+                    <span>Gostou? Então clique aqui e acesse <br /> mais conteúdos no Plantar Educação</span>
+                    <Link to='/produtos' className='text-decoration-none'>
                     <Button style={{ fontSize: '3px' }}>Saiba mais</Button>
+                    </Link>
                 </Grid>
 
                 <Grid item xs={6}>

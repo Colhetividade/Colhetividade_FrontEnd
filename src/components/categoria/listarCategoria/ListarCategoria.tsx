@@ -32,6 +32,7 @@ function ListarCategoria() {
 
   let navigate = useNavigate();
   const [categorias, setCategorias] = useState<Categoria[]>([])
+  
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
   );

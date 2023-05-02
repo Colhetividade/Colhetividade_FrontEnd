@@ -80,9 +80,9 @@ export default function Cadastro() {
     return (
         <Grid container className='cardStyle'>
             <Box className='cardStyle'>
-                <img className='logo margin1' src="/logo.png" alt="" />
+                <img className='logo' src="/logo.png" alt="" />
                 <Typography className='margin1' variant='h4' gutterBottom color="textPrimary" component='h4' align='center' style={{ fontWeight: 'bold' }}>Cadastre-se</Typography>
-                <Card className='curvaBorda color card margin1' sx={{ minWidth: 500, minHeight: 500 }}  >
+                <Card className='curvaBorda color card margin1' sx={{ minWidth: 600, minHeight: 580 }}  >
                     <CardContent>
                         <form onSubmit={cadastrar}>
                             <TextField className='formText curvaBorda' value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' label='nome' variant='outlined' name='nome' margin='normal' placeholder='Insira seu nome' required fullWidth></TextField>

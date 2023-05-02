@@ -8,11 +8,15 @@ import './ListarProdutos.css';
 import useLocalStorage from 'react-use-localstorage';
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 function ListarProdutos() {
   const [produtos, setProdutos] = useState<Produto[]>([])
-  const [token, setToken] = useLocalStorage('token');
   let navigate = useNavigate();
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+ );
 
   useEffect(() => {
     if (token == "") {
@@ -21,7 +25,7 @@ function ListarProdutos() {
         autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,
-        pauseOnHover: true,
+        pauseOnHover: false,
         draggable: true,
         progress: undefined,
         theme: "light",
@@ -50,6 +54,7 @@ function ListarProdutos() {
     <img src="https://www.raizs.com.br/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fnossa-horta.bd960607.png&w=1920&q=75" className='banner'/>
     <h1> Nossos Produtos </h1>
       <Grid container spacing={2}>
+        
         {
           produtos.map(produto => (
             <Grid className="card-produtos"item xs={2} key={produto.id}>
@@ -64,7 +69,9 @@ function ListarProdutos() {
                   </Typography>
                                 </CardContent>
                 <CardActions>
+                <Link to={`/carrinho/${produto.id}`} className="text-decorator-none">
                   <Button className="botao">Adicionar ao carrinho</Button>
+                  </Link>
                 </CardActions>
               </Card>
               </Grid>
