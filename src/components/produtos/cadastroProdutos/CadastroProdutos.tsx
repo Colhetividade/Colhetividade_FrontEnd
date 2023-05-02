@@ -1,12 +1,15 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Box from "@mui/material/Box/Box";
-import {Container, Typography, TextField, Button, Select,InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
+import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
 import useLocalStorage from "react-use-localstorage";
-import {  busca, buscaId, post, put } from "../../../services/Service";
+import { busca, buscaId, post, put } from "../../../services/Service";
 import "./CadastroProdutos.css";
 import Produto from "../../../models/Produto";
 import Categoria from "../../../models/Categoria";
+import { Card, CardActions, CardContent } from "@mui/material";
+import { Grid } from "@material-ui/core";
+import fotoCadastroProduto from "../../assets/img/fotoFundoCadastroProduto.png";
 
 function CadastroProduto() {
     let history = useNavigate();
@@ -29,7 +32,7 @@ function CadastroProduto() {
         categoria: null,
         isDoacao: false
     });
-// Verificando a existência do token
+    // Verificando a existência do token
     useEffect(() => {
         if (token == "") {
             alert("Você precisa fazer login!");
@@ -38,7 +41,7 @@ function CadastroProduto() {
     }, [token]);
 
 
-// Buscando as categorias e listando
+    // Buscando as categorias e listando
     useEffect(() => {
         getCategoria()
         if (id !== undefined) {
@@ -46,7 +49,7 @@ function CadastroProduto() {
         }
     }, [id]);
 
-// Atualização da categoria vinculada anteriormente
+    // Atualização da categoria vinculada anteriormente
     useEffect(() => {
         setProduto({
             ...produto,
@@ -62,9 +65,9 @@ function CadastroProduto() {
         })
     }
 
-// Buscando produto pelo id
+    // Buscando produto pelo id
     async function findById(id: string) {
-       await buscaId(`/produtos/${id}`, setProduto, {
+        await buscaId(`/produtos/${id}`, setProduto, {
             headers: {
                 Authorization: token,
             },
@@ -75,7 +78,7 @@ function CadastroProduto() {
         setProduto({
             ...produto,
             [e.target.name]: e.target.value,
-            categoria:categoria
+            categoria: categoria
         });
     }
 
@@ -121,97 +124,105 @@ function CadastroProduto() {
 
     return (
         <>
-            <Container maxWidth="sm" className="topo">
-                <form className="formAll" onSubmit={onSubmit}>
-                    <Typography
-                        className="typo_size"
-                        variant="h3"
-                        color="textSecondary"
-                        component="h1"
-                        align="center"
-                    >
-                        Cadastrar Produto
-                    </Typography>
-                    <TextField
-                        value={produto.nomeProduto}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)}
-                        id="nome"
-                        label="Nome do Produto"
-                        variant="outlined"
-                        type="text"
-                        name="nomeProduto"
-                        margin="normal"
-                        fullWidth
-                    />
-                    <TextField
-                        value={produto.quantidade}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)}
-                        id="quantidade"
-                        label="Quantidade"
-                        variant="outlined"
-                        type="number"
-                        name="quantidade"
-                        margin="normal"
-                        fullWidth
-                    />
-                    <TextField
-                        value={produto.preco}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)}
-                        id="preco"
-                        label="Preço"
-                        variant="outlined"
-                        name="preco"
-                        type="number"
-                        margin="normal"
-                        fullWidth
-                    />
-                    <TextField
-                        value={produto.fotoProduto}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)}
-                        id="foto"
-                        label="Foto do Produto"
-                        variant="outlined"
-                        name="fotoProduto"
-                        margin="normal"
-                        fullWidth
-                    />
-                    <InputLabel id="demo-simple-select-helper-label" >Categoria </InputLabel>
-                    <Select  fullWidth
-                        labelId="demo-simple-select-helper-label"
-                        id="demo-simple-select-helper"
-                        onChange={(e) => buscaId(`/categoria/${e.target.value}`, setCategoria, {
-                            headers: {
-                                'Authorization': token
-                            }
-                        })}>
-                        {
-                            categorias.map(categoria => (
-                                <MenuItem value={categoria.id}>{categoria.tipo}</MenuItem>
-                            ))
-                        }
-                    </Select>
-                    <FormHelperText>Escolha uma categoria para o produto</FormHelperText>
 
-                    <Box className="buttons">
-                        <Button
-                            className="btn_send"
-                            type="submit"
-                            variant="contained"
-                            color="primary"
-                        >
-                            Finalizar
-                        </Button>
-                        <Button
-                            className="btn_cancel"
-                            onClick={returned}
-                            variant="contained"
-                            color="primary"
-                        >
-                            Cancelar
-                        </Button>
+            <Grid container className="topo">
+                <Grid className="alinhar2" item xs={6}>
+
+                    <Box className="box" >
+
+
+                        <Typography className="margin1" variant="h4" align="center">
+                            Cadastro de Produto
+                        </Typography>
+
+                        <Card className="card borda" sx={{ maxWidth: 500, minHeight: 500 }}>
+                            <CardContent>
+                                <form className="formAll" onSubmit={onSubmit} >
+
+                                    <TextField value={produto.nomeProduto}
+                                        onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)}
+                                        id="nome"
+                                        label="Nome do Produto"
+                                        variant="outlined"
+                                        type="text"
+                                        name="nomeProduto"
+                                        margin="normal"
+                                        fullWidth className="form-text borda" />
+
+                                    <TextField value={produto.quantidade}
+                                        onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)}
+                                        id="quantidade"
+                                        label="Quantidade"
+                                        variant="outlined"
+                                        type="number"
+                                        name="quantidade"
+                                        margin="normal"
+                                        fullWidth className="form-text borda" />
+
+                                    <TextField value={produto.preco}
+                                        onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)}
+                                        id="preco"
+                                        label="Preço"
+                                        variant="outlined"
+                                        name="preco"
+                                        type="number"
+                                        margin="normal" className="form-text borda" fullWidth />
+
+                                    <TextField value={produto.fotoProduto}
+                                        onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)}
+                                        id="foto"
+                                        label="Foto do Produto"
+                                        variant="outlined"
+                                        name="fotoProduto"
+                                        margin="normal" className="form-text borda" fullWidth />
+
+                                    <InputLabel id="demo-simple-select-helper-label" >Categoria </InputLabel>
+                                    <Select fullWidth
+                                        labelId="demo-simple-select-helper-label"
+                                        id="demo-simple-select-helper"
+                                        onChange={(e) => buscaId(`/categoria/${e.target.value}`, setCategoria, {
+                                            headers: {
+                                                'Authorization': token
+                                            }
+                                        })}>
+                                        {
+                                            categorias.map(categoria => (
+                                                <MenuItem value={categoria.id}>{categoria.tipo}</MenuItem>
+                                            ))
+                                        }
+                                    </Select>
+                                    <FormHelperText>Escolha uma categoria para o produto</FormHelperText>
+
+
+
+                                    <CardActions className="center">
+
+                                        <Button className="botao margin1" type="submit" variant="contained">
+                                            Cadastrar
+                                        </Button>
+                                        {/* <Button className="btn_cancel botao margin1"
+                                            onClick={returned}
+                                            variant="contained"
+                                            color="primary">
+                                            Cancelar
+                                        </Button> */}
+                                    </CardActions>
+
+                                </form>
+                            </CardContent>
+                        </Card>
+
                     </Box>
-                </form>
-            </Container>
+
+
+                </Grid>
+
+                <Grid item xs={6} className="alinhar3" >
+
+                </Grid>
+            </Grid>
+
+
         </>
     );
 }

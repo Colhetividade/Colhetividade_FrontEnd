@@ -10,7 +10,7 @@ import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import EditIcon from '@material-ui/icons/Edit';
 import { red } from '@mui/material/colors';
 import { Box } from "@mui/material";
-
+import banner from '../../../assets/img/banner_home.png';
 function ListarProdutos() {
   const [produtos, setProdutos] = useState<Produto[]>([])
   const [token, setToken] = useLocalStorage('token');
@@ -40,27 +40,37 @@ function ListarProdutos() {
 
   return (
     <>
-    <Link to="/cadastrarProduto">
-      <img src="https://www.raizs.com.br/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fnossa-horta.bd960607.png&w=1920&q=75" className='banner' />
-      </Link>
+    
+        <Grid container>
+          <Grid alignItems="center" item className='banner_home' >
+            <Box >
+              <Typography variant="h1" gutterBottom color="textPrimary" className="text-decoration-none nameBanner"component="h1" align="center">Produtos</Typography>
+              <Link to="/cadastrarProduto">
+              <Button className="btn">Cadastrar um novo produto</Button>
+              </Link>
+            </Box>
+          </Grid>
+          </Grid>
+   
+     
       <h1> Nossos Produtos </h1>
       <Grid container spacing={2}>
- 
+
         {
           produtos.map(produto => (
             <Grid className="card-produtos" item xs={3} key={produto.id}>
               <Card >
                 <CardContent>
-                <Box display="flex" flexDirection="row" justifyItems="end">
-                  <Link to={`/deletarProduto/${produto.id}`} className="text-decorator-none">
+                  <Box display="flex" flexDirection="row-reverse" >
+                    <Link to={`/deletarProduto/${produto.id}`} className="text-decorator-none">
                       <DeleteForeverIcon className="excluir" style={{ color: red[500] }} />
                     </Link>
                     <Link to={`/atualizarProduto/${produto.id}`} className="text-decorator-none">
                       <EditIcon className="edit" />
                     </Link>
-                    </Box>
-                <Box display="flex" flexDirection="column" alignItems="center">
-                  <img className="card-foto" src={produto.fotoProduto} />
+                  </Box>
+                  <Box display="flex" flexDirection="column" alignItems="center">
+                    <img className="card-foto" src={produto.fotoProduto} />
                   </Box>
                   <Typography color="textSecondary" gutterBottom>
                     {produto.nomeProduto}
@@ -68,9 +78,9 @@ function ListarProdutos() {
                   <Typography variant="h5" component="h2" className="preco">
                     R$ {produto.preco},00
                   </Typography>
-                   </CardContent>
+                </CardContent>
                 <CardActions>
-                  <Button className="botao">Adicionar ao carrinho</Button>
+                  <Button className="botao1">Adicionar ao carrinho</Button>
                 </CardActions>
               </Card>
             </Grid>
