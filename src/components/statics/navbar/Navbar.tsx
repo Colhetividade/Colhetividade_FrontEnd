@@ -50,13 +50,6 @@ function Navbar() {
                                 </Typography>
                             </Box>
                         </Link>
-                        <Link to="/produtos" className="text-decorator-none">
-                            <Box mx={1} className="cursor">
-                                <Typography className="nameTypo" variant="h6" color="inherit">
-                                    Produtos
-                                </Typography>
-                            </Box>
-                        </Link>
                         <Link to="/categoria" className="text-decorator-none">
                             <Box mx={1} className="cursor">
                                 <Typography className="nameTypo" variant="h6" color="inherit">
@@ -64,11 +57,21 @@ function Navbar() {
                                 </Typography>
                             </Box>
                         </Link>
+                        <Link to="/produtos" className="text-decorator-none">
+                            <Box mx={1} className="cursor">
+                                <Typography className="nameTypo" variant="h6" color="inherit">
+                                    Produtos
+                                </Typography>
+                            </Box>
+                        </Link>
+                        
+                        <Link to="/plantareducacao" className="text-decorator-none">
                         <Box mx={1} className="cursor">
                             <Typography className="nameTypo" variant="h6" color="inherit">
                                 Plantar Educação
                             </Typography>
                         </Box>
+                        </Link>
                     </Box>
                     
                     {isLoggedIn ? (

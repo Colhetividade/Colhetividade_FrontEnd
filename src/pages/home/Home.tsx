@@ -47,7 +47,7 @@ function Home() {
 
                 <Grid item xs={6} className='more_section'>
                     <span>Gostou? Então clique aqui e acesse <br /> mais conteúdos no Plantar Educação</span>
-                    <Link to='/produtos' className='text-decoration-none'>
+                    <Link to='/plantareducacao' className='text-decoration-none'>
                     <Button style={{ fontSize: '3px' }}>Saiba mais</Button>
                     </Link>
                 </Grid>

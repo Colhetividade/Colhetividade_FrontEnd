@@ -29,7 +29,7 @@ function CadastroProdutos() {
 
                                     <TextField label="Foto" className="form-text borda" fullWidth />
 
-                                    <TextField label="Categoria" className="form-text borda" fullWidth />
+                                    <TextField label="Categoria" className="form-text borda inputcategoria" fullWidth />
 
 
                                     <CardActions className="center">
@@ -46,8 +46,7 @@ function CadastroProdutos() {
 
                     </Box>
                 </Grid>
-                <Grid item xs={6} className="alinhar3" >
-
+                <Grid item xs={6} className="imagebeside" >
                 </Grid>
             </Grid>
 

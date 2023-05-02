@@ -83,7 +83,7 @@ function Carrinho() {
 
     // Função que simula a compra Efetuada com sucesso
     function confirmSales() {
-        toast.success("Compra Confirmada! Verifique o seu email!", {
+        toast.success("Compra/Doação Confirmada! Verifique o seu email!", {
             position: "top-center",
             autoClose: 4000,
             hideProgressBar: false,
@@ -92,7 +92,7 @@ function Carrinho() {
             draggable: true,
             progress: undefined,
             theme: "colored",
-            });
+        });
         history("/produtos")
     }
 
@@ -107,7 +107,7 @@ function Carrinho() {
                             <img src={produto.fotoProduto} alt="Img" />
 
                             <div className='cardProductInfo'>
-                             
+
                                 <Typography variant="h5" component="h2" className='nameProduct'>
                                     {produto.nomeProduto}
                                 </Typography>
@@ -130,37 +130,42 @@ function Carrinho() {
 
                                     id="quantidade" type="number" variant="outlined"
                                     name="quantidade" margin="normal" fullWidth className='inputquantity'
-    
+
                                 />
 
+                                <div className='wrapdonation'>
+                                    <Typography>Este produto é doação?</Typography>
+                                    <input type='checkbox'></input>
+                                </div>
+
                                 <span className='total'>
-                                     R$ {valorTotal()},00
+                                    R$ {valorTotal()},00
                                 </span>
                             </div>
                         </div>
                     </Card>
                 </Box>
 
-                    <Box className='display boxbutton' mb={1.5}>
+                <Box className='display boxbutton' mb={1.5}>
 
-                        <Box className="cardProductButton">
-                            <Box mx={1}>
-                                <Button onClick={confirmSales} variant="contained" size='small' className='btnconfirm'>
-                                    Confimar Compra
-                                </Button>
-                            </Box>
+                    <Box className="cardProductButton">
+                        <Box mx={1}>
+                            <Button onClick={confirmSales} variant="contained" size='small' className='btnconfirm'>
+                                Confimar Compra
+                            </Button>
                         </Box>
-
-                        <Link to="/produtos" className="cardProductButton">
-                            <Box mx={1}>
-                                <Button variant="contained" size='small' className='btncancel'>
-                                    Cancelar
-                                </Button>
-                            </Box>
-                        </Link>
-
                     </Box>
-               
+
+                    <Link to="/produtos" className="cardProductButton">
+                        <Box mx={1}>
+                            <Button variant="contained" size='small' className='btncancel'>
+                                Cancelar
+                            </Button>
+                        </Box>
+                    </Link>
+
+                </Box>
+
             </Grid>
         </>
     )

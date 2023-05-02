@@ -65,7 +65,7 @@ export default function Cadastro() {
             });
 
         } else {
-            toast.info('Dados inconsistentes. Favor verificar as informações de cadastro.', {
+            toast.error('Dados inconsistentes. Favor verificar as informações de cadastro.', {
                 position: "top-right",
                 autoClose: 3000,
                 hideProgressBar: false,

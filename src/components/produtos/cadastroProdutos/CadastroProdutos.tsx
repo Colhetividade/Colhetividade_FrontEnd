@@ -10,12 +10,17 @@ import Categoria from "../../../models/Categoria";
 import { Card, CardActions, CardContent } from "@mui/material";
 import { Grid } from "@material-ui/core";
 import fotoCadastroProduto from "../../assets/img/fotoFundoCadastroProduto.png";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/tokensReducer";
+import { toast } from "react-toastify";
 
 function CadastroProduto() {
     let history = useNavigate();
     const { id } = useParams<{ id: string }>();
     const [categorias, setCategorias] = useState<Categoria[]>([])
-    const [token, setToken] = useLocalStorage("token");
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+     );
 
     const [categoria, setCategoria] = useState<Categoria>({
         id: 0,
@@ -35,10 +40,20 @@ function CadastroProduto() {
     // Verificando a existência do token
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa fazer login!");
-            history("/login");
-        }
-    }, [token]);
+            toast.error('Você precisa estar logado!', {
+              position: "top-right",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+          });
+          history("/login")
+      
+          }
+        }, [token])
 
 
     // Buscando as categorias e listando
@@ -92,9 +107,27 @@ function CadastroProduto() {
                         Authorization: token,
                     },
                 });
-                alert("Produto atualizado com sucesso!");
+                toast.success("Produto atualizado com sucesso!", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
             } catch (error) {
-                alert("Erro ao atualizar. Por favor verifique os campos");
+                toast.error("Erro ao Atualizar, Por favor verifique os campos", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
             }
         } else {
             try {
@@ -105,10 +138,27 @@ function CadastroProduto() {
                     },
                 });
                 // await history("/loading");
-
-                alert("Produto cadastrado com Sucesso!");
+                toast.success("Produto cadastrado com Sucesso!", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
             } catch (error) {
-                alert("Erro ao Cadastrar, Por favor verifique os campos");
+                toast.error("Erro ao Cadastrar, Por favor verifique os campos", {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
             }
         }
         back();
@@ -132,7 +182,7 @@ function CadastroProduto() {
 
 
                         <Typography className="margin1" variant="h4" align="center">
-                            Cadastro de Produto
+                            Formulário de Produtos
                         </Typography>
 
                         <Card className="card borda" sx={{ maxWidth: 500, minHeight: 500 }}>
@@ -192,13 +242,10 @@ function CadastroProduto() {
                                         }
                                     </Select>
                                     <FormHelperText>Escolha uma categoria para o produto</FormHelperText>
-
-
-
                                     <CardActions className="center">
 
                                         <Button className="botao margin1" type="submit" variant="contained">
-                                            Cadastrar
+                                            Enviar Formulário
                                         </Button>
                                         {/* <Button className="btn_cancel botao margin1"
                                             onClick={returned}

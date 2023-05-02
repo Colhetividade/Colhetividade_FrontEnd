@@ -7,11 +7,16 @@ import { buscaId, deleteId } from '../../../services/Service';
 import './DeletarProdutos.css'
 import Produto from '../../../models/Produto';
 import Categoria from '../../../models/Categoria';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 function DeletarProduto() {
   let navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
-  const [token, setToken] = useLocalStorage('token');
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
   const [produto, setProduto] = useState<Produto>({
     id: 0,
     nomeProduto: '',
@@ -21,9 +26,19 @@ function DeletarProduto() {
     doacaoTotal: 0,
     isDoacao: false
   })
+
   useEffect(() => {
     if (token == "") {
-      alert("Você precisa fazer Login!")
+      toast.error('Você precisa estar logado!', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       navigate("/login")
 
     }
@@ -50,7 +65,16 @@ function DeletarProduto() {
         'Authorization': token
       }
     });
-    alert('Produto excluído com Sucesso');
+    toast.success('Produto excluído com Sucesso!', {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   }
 
   function nao() {

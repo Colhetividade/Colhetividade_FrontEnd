@@ -33,7 +33,7 @@ export default function BasicModal({ videoModal, txtModal }: ModalProps) {
         <div className='txtButton'>
 
 
-            <Button className='btnModal'  onClick={handleOpen}>
+            <Button className='btnModalEducacao'  onClick={handleOpen}>
                 <Typography color="#212121" variant='h5'>Saiba Mais</Typography>
             </Button>
             <Modal

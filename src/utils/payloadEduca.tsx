@@ -2,11 +2,11 @@ import "./payloadEduca.css"
 
 export const cardProps = [
   {
-    tituloCard: "Importancia da Agricultura Familiar",
+    tituloCard: "Importância da Agricultura Familiar",
     cardConteudo: "A agricultura familiar é importante para a economia, a biodiversidade e a segurança alimentar, sendo uma fonte de renda e subsistência para milhões de famílias em todo o mundo.",
     imagemInfo: {
       url: "https://i.imgur.com/dUfGfSB.jpg",
-      alt: "Uma familia um uma plantação, ao por do sol"
+      alt: "Uma família um uma plantação, ao por do sol"
     },
 
     modalProps: {

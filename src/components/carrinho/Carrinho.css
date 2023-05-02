@@ -7,7 +7,7 @@
 .cardContainer{
     display: flex!important;
     width: 800px!important;
-    height: 300px!important;
+    height: 330px!important;
     border-radius: 20px!important;
     border-color: #37784F!important;
 }
@@ -31,6 +31,16 @@
 .total::before {
     color: #37784F !important;
     content: "Total: ";
+}
+
+.wrapdonation{
+    display: flex;
+    height: 40px;
+    align-items: center;
+}
+
+.wrapdonation input{
+    margin-left: 10px;
 }
 
 

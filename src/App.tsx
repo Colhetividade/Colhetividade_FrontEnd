@@ -9,6 +9,7 @@ import ListarCategoria from './components/categoria/listarCategoria/ListarCatego
 import ListarProdutos from './components/produtos/listarProdutos/ListarProdutos';
 import CadastroCategoria from './components/categoria/cadastroCategoria/CadastroCategoria';
 import DeletarCategoria from './components/categoria/deletarCategoria/DeletarCategoria';
+import Educacao from './pages/educacao/Educacao'
 import Loading from './components/statics/loading/Loading';
 import CadastroProduto from './components/produtos/cadastroProdutos/CadastroProdutos';
 import DeletarProduto from './components/produtos/deletarProdutos/DeletarProdutos';
@@ -34,6 +35,7 @@ function App() {
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/categoria" element={<ListarCategoria />} />
           <Route path="/produtos" element={<ListarProdutos />} />
+          <Route path="/plantareducacao" element={<Educacao />} />
           <Route path="/formularioCategoria" element={<CadastroCategoria />} />
           <Route path="/formularioCategoria/:id" element={<CadastroCategoria />} />
           <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
