@@ -68,7 +68,7 @@ function Navbar() {
                         <Link to="/plantareducacao" className="text-decorator-none">
                         <Box mx={1} className="cursor">
                             <Typography className="nameTypo" variant="h6" color="inherit">
-                                Plantar Educação
+                                Educa+
                             </Typography>
                         </Box>
                         </Link>

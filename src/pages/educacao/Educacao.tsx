@@ -43,13 +43,13 @@ function Educacao() {
                         <p className='texto3'> Um espaço de aprendizagem para você descobrir mais sobre agricultura familiar</p>
                     </div>
                     <div>
-                        <img src={fotoEducacao} alt="pessoa segurando uma cesta com alimentos" height="285px" />
+                        <img src={fotoEducacao} alt="pessoa segurando uma cesta com alimentos" height="311px" width='400px' />
                     </div>
 
                 </Grid>
                 {cardProps.map(card => {
                     return (
-                        <Grid item xs={12} xl={4} justifyContent="center" display="flex">
+                        <Grid item xs={4} justifyContent="center" display="flex">
                             <Card sx={{ maxWidth: 420 }} className='cardEduca'>
                                 <Cards
                                     cardConteudo={card.cardConteudo}
@@ -57,11 +57,14 @@ function Educacao() {
                                     tituloCard={card.tituloCard}
 
                                 />
-                                <BasicModal
 
+                                <div className='diveducawrap'>
+
+                                <BasicModal
                                     videoModal={card.modalProps.videoModal}
                                     txtModal={card.modalProps.txtModal}
-                                />
+                                    />
+                                    </div>
                             </Card>
                         </Grid>
                     )

@@ -11,8 +11,6 @@ interface CardProps {
     };
     tituloCard: string;
     cardConteudo: string;
-    
-
 }
 
 export function Cards({ imagemInfo, tituloCard, cardConteudo }: CardProps) {
@@ -25,7 +23,7 @@ export function Cards({ imagemInfo, tituloCard, cardConteudo }: CardProps) {
                 title={imagemInfo.alt}
                 
             />
-            <CardContent sx={{height: 150}}>
+            <CardContent sx={{height: 150}} >
                 <Typography gutterBottom variant="h5" component="div" color="white">
                     {tituloCard}
                 </Typography>

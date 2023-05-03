@@ -107,6 +107,7 @@
   color: white;
   width: 150px;
   height: 52px;
+  cursor: pointer;
 }
 
 .swiperItems {

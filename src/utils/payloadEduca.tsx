@@ -5,12 +5,12 @@ export const cardProps = [
     tituloCard: "Importância da Agricultura Familiar",
     cardConteudo: "A agricultura familiar é importante para a economia, a biodiversidade e a segurança alimentar, sendo uma fonte de renda e subsistência para milhões de famílias em todo o mundo.",
     imagemInfo: {
-      url: "https://i.imgur.com/dUfGfSB.jpg",
+      url: "https://www.agenciaminas.mg.gov.br/ckeditor_assets/pictures/14931/content_agricultura-familiar_credito-divulgacao-seapa_1-2.jpg",
       alt: "Uma família um uma plantação, ao por do sol"
     },
 
     modalProps: {
-      videoModal: <iframe width="560" height="315" src="https://www.youtube.com/embed/kq7-mPkmaWs" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen> </iframe>,
+      videoModal: <iframe width="400" height="315" src="https://www.youtube.com/embed/kq7-mPkmaWs" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen> </iframe>,
       txtModal: <div className="textoModal">
         <p>
           A agricultura familiar é um dos principais setores da economia em muitos países, sendo responsável por grande parte da produção de alimentos consumidos pela população local e nacional. Além disso, a agricultura familia
@@ -36,11 +36,12 @@ export const cardProps = [
     },
 
     modalProps: {
-      videoModal: <iframe width="560" height="240" src="https://www.youtube.com/embed/-sw1pgc3_RA" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>,
+      videoModal: <iframe width="400" height="240" src="https://www.youtube.com/embed/-sw1pgc3_RA" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>,
       txtModal: <div className="textoModal">
         <p>
           As hortas urbanas ajudam a melhorar o microclima tanto nas ruas como dentro de casa,  e ajuda a recupera áreas degradadas se tornando uma solução simples para esse problema. Além de contribuir com a revitalização de terrenos inutilizados, as hortas urbanas deixam as cidades mais bonitas e agradáveis, contribuindo para a saúde física e mental dos moradores.</p>
-        <p><br />
+        
+        <p ><br />
           Um exemplo desse trabalho é a primeira hora urbana da cidade de Maceió (AL), localizada no Loteamento Nascente do Sol, em Benedito Bentes. <br />
           A área recuperada era frequentemente utilizada para o descarte irregular de resíduos sólidos, como lixo domiciliar e materiais de construção civil.<br />
           O fato é que grande parte das pessoas não têm consciência de que os espaços públicos precisam ser ocupados para o benefício próprio da população.<br />
@@ -73,7 +74,7 @@ export const cardProps = [
     },
 
     modalProps: {
-      videoModal: <iframe width="560" height="260" src="https://www.youtube.com/embed/sZNgj4DXA8Y" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>,
+      videoModal: <iframe width="400" height="260" src="https://www.youtube.com/embed/sZNgj4DXA8Y" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>,
       txtModal: <div className="textoModal">
         <p>
           Segue abaixo o passo a passo para o desenvolvimento de uma horta comunitária ou doméstica. Lembre-se que ter uma horta é produzir<br /><br />
@@ -105,7 +106,7 @@ export const cardProps = [
     },
 
     modalProps: {
-      videoModal: <iframe width="560" height="260" src="https://www.youtube.com/embed/QE5cTgN9Pck" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>,
+      videoModal: <iframe width="400" height="260" src="https://www.youtube.com/embed/QE5cTgN9Pck" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>,
       txtModal: <div className="textoModal">
         <p>
           Para iniciarmos o passo a passo para plantação de uma frutífera, visando o seu ideal desenvolvimento, faremos abaixo um passo a passo:<br /><br />
@@ -143,7 +144,8 @@ export const cardProps = [
 
     modalProps: {
       videoModal: "",
-      txtModal: <div className="textoModal">
+      txtModal: 
+      <div className="textoModalDesafios">
         <p>
           No Brasil, a agricultura familiar enfrenta muitos dos mesmos desafios que em outros lugares, mas também enfrenta problemas específicos do país. Alguns dos principais problemas da agricultura familiar no Brasil incluem:<br /><br />
 

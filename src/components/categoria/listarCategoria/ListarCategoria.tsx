@@ -109,10 +109,12 @@ function ListarCategoria() {
                 <Box className="swiperItems">
                   <p className="promocao">Promoções do momento</p>
                   <p className="tipo">Milho orgânico <p>por R$17,99</p></p>
+                  <Link to='/produtos'>
                   <button className="button-swiper">Comprar</button>
+                  </Link>
                 </Box>
                 <Box className="swiper2">
-                  <img className="img-swiper" src={foto3} alt="foto de um saco de feijão" />
+                  <img className="img-swiper" src='https://mercadoorganico.com/8353-home_default/gritz-de-milho-organico-400g-ecobio.jpg' alt="foto de um saco de feijão" />
                 </Box>
               </Box>
             </SwiperSlide>
@@ -121,18 +123,22 @@ function ListarCategoria() {
                 <Box className="swiperItems">
                   <p className="promocao">Promoções do momento</p>
                   <p className="tipo">Arroz Integral <p>por R$10,99</p></p>
+                  <Link to='/produtos'>
                   <button className="button-swiper">Comprar</button>
+                  </Link>
                 </Box>
                 <Box className="swiper2">
-                  <img className="img-swiper" src={foto2} alt="foto de um saco de feijão" />
+                  <img className="img-swiper" src='https://images.tcdn.com.br/img/img_prod/1012545/arroz_integral_organico_500g_1791_1_eac6ed1dfaf4a7b7a5e4298a0efa40a9.jpg' alt="foto de um saco de arroz" />
                 </Box>
               </Box></SwiperSlide>
             <SwiperSlide className='mySwiper' >
               <Box display="flex" className="swiper1">
                 <Box className="swiperItems">
                   <p className="promocao">Promoções do momento</p>
-                  <p className="tipo">Arroz Integral <p>por R$10,99</p></p>
+                  <p className="tipo">Feijão Fradinho <p>por R$11,80</p></p>
+                  <Link to='/produtos'>
                   <button className="button-swiper">Comprar</button>
+                  </Link>
                 </Box>
                 <Box className="swiper2">
                   <img className="img-swiper" src={foto2} alt="foto de um saco de feijão" />
@@ -143,11 +149,13 @@ function ListarCategoria() {
               <Box display="flex" className="swiper1">
                 <Box className="swiperItems">
                   <p className="promocao">Promoções do momento</p>
-                  <p className="tipo">Arroz Integral <p>por R$10,99</p></p>
+                  <p className="tipo">Açúcar Demerara <p>por R$6,90</p></p>
+                  <Link to='/produtos'>
                   <button className="button-swiper">Comprar</button>
+                  </Link>
                 </Box>
                 <Box className="swiper2">
-                  <img className="img-swiper" src={foto2} alt="foto de um saco de feijão" />
+                  <img className="img-swiper" src='https://images.tcdn.com.br/img/img_prod/909151/acucar_demerara_organico_1kg_native_263_1_bafe08635a9646d4415cf1a10b1cc67d.jpg' alt="foto de um saco de açúcar" />
                 </Box>
               </Box>
             </SwiperSlide>

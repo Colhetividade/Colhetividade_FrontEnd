@@ -99,7 +99,6 @@ function CadastroProduto() {
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault();
-
         if (id !== undefined) {
             try {
                 await put(`/produtos`, produto, setProduto, {
@@ -174,25 +173,24 @@ function CadastroProduto() {
 
     return (
         <>
-
-            <Grid container className="topo">
+            <Grid container className="topoCadastroProdutos">
                 <Grid className="alinhar2" item xs={6}>
 
-                    <Box className="box" >
+                    <Box className="box formularioCadastroProduto" >
 
 
-                        <Typography className="margin1" variant="h4" align="center">
+                        <Typography className="margin1 " variant="h4" align="center">
                             Formulário de Produtos
                         </Typography>
 
-                        <Card className="card borda" sx={{ maxWidth: 500, minHeight: 500 }}>
+                        <Card className="card borda" sx={{ maxWidth: 500, minHeight: 530 }}>
                             <CardContent>
                                 <form className="formAll" onSubmit={onSubmit} >
 
                                     <TextField value={produto.nomeProduto}
                                         onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)}
                                         id="nome"
-                                        label="Nome do Produto"
+                                        placeholder="Nome do Produto"
                                         variant="outlined"
                                         type="text"
                                         name="nomeProduto"
@@ -202,7 +200,7 @@ function CadastroProduto() {
                                     <TextField value={produto.quantidade}
                                         onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)}
                                         id="quantidade"
-                                        label="Quantidade"
+                                        placeholder="Quantidade"
                                         variant="outlined"
                                         type="number"
                                         name="quantidade"
@@ -212,7 +210,7 @@ function CadastroProduto() {
                                     <TextField value={produto.preco}
                                         onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)}
                                         id="preco"
-                                        label="Preço"
+                                        placeholder="Preço"
                                         variant="outlined"
                                         name="preco"
                                         type="number"
@@ -221,13 +219,14 @@ function CadastroProduto() {
                                     <TextField value={produto.fotoProduto}
                                         onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)}
                                         id="foto"
-                                        label="Foto do Produto"
+                                        placeholder="Foto do Produto"
                                         variant="outlined"
                                         name="fotoProduto"
                                         margin="normal" className="form-text borda" fullWidth />
 
-                                    <InputLabel id="demo-simple-select-helper-label" >Categoria </InputLabel>
+                                    <InputLabel id="demo-simple-select-helper-label" className='inputla'>Categoria: </InputLabel>
                                     <Select fullWidth
+                                        className='selector'
                                         labelId="demo-simple-select-helper-label"
                                         id="demo-simple-select-helper"
                                         onChange={(e) => buscaId(`/categoria/${e.target.value}`, setCategoria, {
@@ -258,10 +257,7 @@ function CadastroProduto() {
                                 </form>
                             </CardContent>
                         </Card>
-
                     </Box>
-
-
                 </Grid>
 
                 <Grid item xs={6} className="alinhar3" >

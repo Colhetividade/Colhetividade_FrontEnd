@@ -9,10 +9,17 @@
 
 .cardCadastro {
     text-decoration: none;
-    width: 500px;
+    width: 450px;
     height: 500px;
     box-shadow: 5px 5px 18px #888888;
+   
 }
+
+.card-produtos{
+    background-color: red;
+    width: 100px!important;
+}
+
 
 .botao1 {
     background-color: white !important;
@@ -21,6 +28,7 @@
     border: 1px solid #37784f !important;
     /* margin-left: 5vw !important; */
     width: 100%;
+    
 }
 
 .btn {
@@ -54,6 +62,7 @@
     margin-bottom: 50px;
     width: 100vw;
     text-decoration: none !important;
+    
 }
 
 .textdecoration{
@@ -67,6 +76,7 @@ h1 {
 .card-foto {
     width: 150px;
     height: 150px;
+    
 }
 
 .preco {
