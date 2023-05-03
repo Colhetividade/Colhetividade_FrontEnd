@@ -73,7 +73,7 @@ function CadastroProduto() {
     }, [categoria])
 
     async function getCategoria() {
-        await busca("/categoria", setCategorias, {
+        await busca("/usuarios", setCategorias, {
             headers: {
                 'Authorization': token
             }
